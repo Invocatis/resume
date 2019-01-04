@@ -1,0 +1,103 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{stmaryrd}
+\usepackage{MnSymbol}
+\usepackage{fontawesome}
+\usepackage{fontspec}
+\usepackage{booktabs}
+
+\textwidth = 7 in
+\textheight = 9.5 in
+\hoffset = -.25 in
+\oddsidemargin = 0.0 in
+\voffset = -0.5 in
+\topmargin = 0.0 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+\parskip = 0.0 in
+\parindent = 0.0 in
+
+\mdfdefinestyle{frame}{
+	linecolor=black,
+	outerlinewidth=.5pt,
+	outertopmargin=0pt,
+	innertopmargin=\baselineskip,
+	innerbottommargin=\baselineskip
+	innerrightmargin=20pt,
+	innerleftmargin=20pt,
+	backgroundcolor=white
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+\pagenumbering{gobble}
+\begin{tabular}{l}
+\textbf{\huge{Luke Cook}}\\\\\\\\\end{tabular}
+ \hfill
+\begin{tabular}{ll}
+	\scalebox{1.4}{\faPhone} & (607) 220-4047\\
+	\scalebox{1.4}{\faEnvelope} & invocatis@gmail.com\\
+	\scalebox{1.4}{\faGithub} & github.com/invocatis\\
+	\scalebox{1.4}{\faLinkedin} & www.linkedin.com/in/invocatis\\
+\end{tabular}
+\hrule
+\vspace{4mm}
+\large{\textbf{Education Background}}\\
+\hspace*{6mm}\large{Rochester Institute of Technology} --- \small{Bachelor of Science in Computer Science}\\
+	% \hspace*{12mm}\small{Bachelor of Science in Applied Mathematics \\
+
+\large{\textbf{Technical Skills}}
+\begin{center}
+\hspace{14mm}
+\left
+\Bigg[
+\begin{tabular}{l|l}
+\textit{Fluent} & Clojure, Clojurescript, Java, SQL, NoSQL\hspace*{60mm}\\
+\textit{Proficient} & Kotlin, Matlab, $L^AT_EX$\\
+\textit{Novice} & Javascript, C, Scala, CSS/HTML\\
+\end{tabular}
+\end{center}
+\vspace{5mm}
+
+\textbf{Work Experience}\\\\
+\left\bigg[\hspace{-1.9mm}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r}
+	\small{\textbf{Software Engineer Co-op}} & \small{January 2018 - July 2018}\\
+  \small{\textbf{Intuit | Mountain View, California}}&\\
+\end{tabular*}
+
+\begin{itemize}
+	\item[$\circ$] \small{Worked in scrum team, with daily standups, weekly meetings, and biweekly sprints}
+	\item[$\circ$] \small{Developed for the account signup web service}
+	\item[$\circ$] \small{Programmed in Java, using Springboot, SQL, \textsf{REST}, and Object Oriented Design}
+\end{itemize}
+
+\left\Bigg[\hspace{-1.9mm}
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r}
+	\small{\textbf{Freelance Development}} & \small{January 2015 - Present}\\
+  \small{\textbf{Swiftwater Brewing Co | Rochester, New York}}&\\
+\end{tabular*}
+
+\begin{itemize}
+	\item[$\circ$] \small{Created \textbf{POS} system for tracking and processing sales using Java, and MySQL}
+	\item[$\circ$] \small{Developed user interface to emphasize quick and easy use}
+	\item[$\circ$] \small{Managed credit card securities and fulfilled \textbf{PCI-DSS} requirements}
+	\item[$\circ$] \small{Setup connection from \textbf{POS} to Elavon banking system for credit card processing}
+\end{itemize}
+
+\vspace{4mm}
+\large{\textbf{Personal Projects}}\\\\
+\vspace{1mm}
+\small{\textbf{Database Development}} \hspace{98mm} \small{June 2015-Present}\\
+\hspace*{6mm}\footnotesize{Database management software written in Clojure}
+\begin{itemize}
+	\small{\item[$\circ$] Created software to modulize many common features of current database solutions}
+	\small{\item[$\circ$] Enabled polyglot solutions to be housed and managed from a single solution}
+	\small{\item[$\circ$] Separated data handling and persistence logic to provide greater modularity}
+\end{itemize}
+\end{document}
