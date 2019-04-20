@@ -1,109 +1,120 @@
-\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.1.4, 27 July 2018) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+% 
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
 
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage[framemethod=TikZ]{mdframed}
-\usepackage{stmaryrd}
-\usepackage{MnSymbol}
-\usepackage{fontawesome}
-\usepackage{fontspec}
-\usepackage{booktabs}
+\PassOptionsToPackage{dvipsnames}{xcolor}
 
-\textwidth = 7 in
-\textheight = 9.5 in
-\hoffset = -.25 in
-\oddsidemargin = 0.0 in
-\voffset = -0.5 in
-\topmargin = 0.0 in
-\headheight = 0.0 in
-\headsep = 0.0 in
-\parskip = 0.0 in
-\parindent = 0.0 in
+\documentclass[10pt,a4paper]{altacv}
 
-\mdfdefinestyle{frame}{
-	linecolor=black,
-	outerlinewidth=.5pt,
-	outertopmargin=0pt,
-	innertopmargin=\baselineskip,
-	innerbottommargin=\baselineskip
-	innerrightmargin=20pt,
-	innerleftmargin=20pt,
-	backgroundcolor=white
-}
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm,footskip=2\baselineskip}
 
-\renewcommand{\familydefault}{\sfdefault}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[default]{lato}
+
+\definecolor{Bluish}{HTML}{006080}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+
+\colorlet{heading}{Black}
+\colorlet{accent}{Bluish}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\usepackage[colorlinks]{hyperref}
 
 \begin{document}
-\pagenumbering{gobble}
-\begin{tabular}{l}
-\textbf{\huge{Luke Cook}}\\\\\\\\\end{tabular}
- \hfill
-\begin{tabular}{ll}
-	\scalebox{1.4}{\faPhone} & (607) 220-4047\\
-	\scalebox{1.4}{\faEnvelope} & invocatis@gmail.com\\
-	\scalebox{1.4}{\faGithub} & github.com/invocatis\\
-	\scalebox{1.4}{\faLinkedin} & www.linkedin.com/in/invocatis\\
-\end{tabular}
-\hrule
-\vspace{4mm}
-\large{\textbf{Education Background}}\\
-\hspace*{6mm}\large{Rochester Institute of Technology} --- \small{Bachelor of Science in Computer Science}\\
-	% \hspace*{12mm}\small{Bachelor of Science in Applied Mathematics \\
 
-\large{\textbf{Technical Skills}}
-\begin{center}
-\hspace{14mm}
-\left
-\Bigg[
-\begin{tabular}{l|l}
-\textit{Fluent} & Clojure, Clojurescript, Java, SQL, NoSQL\hspace*{60mm}\\
-\textit{Proficient} & Kotlin, Matlab, $L^AT_EX$\\
-\textit{Novice} & Javascript, C, Scala, Haskell, Prolog, CSS/HTML\\
-\end{tabular}
-\end{center}
-\vspace{5mm}
+\name{LUKE COOK}
+\tagline{Computer Scientist --- Problem Solver --- Abstract Thinker}
 
-\textbf{Work Experience}\\\\
-\left\bigg[\hspace{-1.9mm}
-\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r}
-	\small{\textbf{Software Engineer Co-op}} & \small{January 2018 - July 2018}\\
-  \small{\textbf{Intuit | Mountain View, California}}&\\
-\end{tabular*}
+\personalinfo{%
+  \email{invocatis@gmail.com}
+  \phone{(607) 220-4047}
+  \location{Aurora, Ny}
+  \linkedin{linkedin.com/in/invocatis}
+  \github{github.com/invocatis}
+}
 
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+\cvsection[page1sidebar]{Experience}
+
+\cvevent{Software Engineer Coop}{Intuit}{January 2017 - July 2017}{Mountain View, California}
 \begin{itemize}
-	\item[$\circ$] \small{Worked in scrum team, with daily standups, weekly meetings, and biweekly sprints}
-	\item[$\circ$] \small{Developed for the account signup web service}
-	\item[$\circ$] \small{Programmed in Java, using Springboot, SQL, \textsf{REST}, and Object Oriented Design}
+    \item Account signup backend development & implementation
+    \item Worked in Agile team with daily standups, weekly meetings, and bi-weekly sprints
 \end{itemize}
 
-\left\Bigg[\hspace{-1.9mm}
-\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r}
-	\small{\textbf{Freelance Development}} & \small{January 2015 - Present}\\
-  \small{\textbf{Swiftwater Brewing Co | Rochester, New York}}&\\
-\end{tabular*}
+\cvtag{Java}
+\cvtag{Oracle SQL}
+\cvtag{Amazon S3}
+\cvtag{Springboot}
+\cvtag{REST}
+\cvtag{OOP}
+\cvtag{Agile}
+
+\divider
+
+\cvevent{Point-of-Sale Development}{Swiftwater Brewing}{}{Rochester, NY}
+\begin{itemize}
+    \item Created a Point of Sale solution, setup network model, worked with credit card processers
+    \item Worked as a bartender, using my solution and being around those who used it. Listened to their stories, complaints, and suggestions and incorporated them as new features.
+\end{itemize}
+
+\cvtag{Java}
+\cvtag{Java Swing}
+\cvtag{MySQL}
+\cvtag{PCI/DSS}
+\cvtag{Linux}
+
+\cvsection{Projects}
+
+\cvevent{Flip}{Polyglot Database Solution}{}{}
 
 \begin{itemize}
-	\item[$\circ$] \small{Created \textbf{POS} system for tracking and processing sales using Java, and MySQL}
-	\item[$\circ$] \small{Developed user interface to emphasize quick and easy use}
-	\item[$\circ$] \small{Managed credit card securities and fulfilled \textbf{PCI-DSS} requirements}
-	\item[$\circ$] \small{Setup connection from \textbf{POS} to Elavon banking system for credit card processing}
+    \item Provides logic for creating, and including data-management modules
+    \item Modules are applied to abstract data points, in a linear pipeline
+    \item Modules provide common features from existinc database solutions [id schemes, field inclusion/exclusion, data types/sizes, inheritance]
 \end{itemize}
-\vspace{2mm}
-\large{\textbf{Personal Projects}}\\\\
-\small{\textbf{Flip: Polyglot Database}}\\
-\hspace*{6mm}\footnotesize{Modular, Polyglot database solution written in Clojure}
+
+\cvtag{Clojure}
+\cvtag{SQL}
+\cvtag{NoSQL}
+\cvtag{Database Solutions}
+\cvtag{Library Development}
+\divider
+
+\cvevent{Motif}{Recursive Pattern Matching}{}{}
+
+\vspace{-0.2cm}
+\github{github.com/invocatis/motif}\\
+\vspace{0.2cm}
+
 \begin{itemize}
-	\small{\item[$\circ$] Modular software to separate, and contain many common features of other database solutions}
-	\small{\item[$\circ$] Modules can be organized to create Polyglot solutions, inheritance trees, and data entry guards}
-	\small{\item[$\circ$] Uses conversions of commands to create a concise pipeline for data handling}
+    \item Comprehensive, clean DSL for matching features of recursive, mixed data structures
+    \item Patterns are data: Clojure collections and functions compose into patterns
 \end{itemize}
-\vspace{1mm}
-\small{\textbf{Motif: Pattern Matching for Clojure}}\\
-\hspace*{6mm}\footnotesize{Pattern matching based on Clojure's core data types}
-\begin{itemize}
-	\small{\item[$\circ$] Comprehensive, clean DSL for matching features of recursive, mixed data structures}
-	\small{\item[$\circ$] Precompliles patterns for optimized matching against many entries }
-	\small{\item[$\circ$] Interprets each Clojure collection logically differently, creating useful and interesting }
-\end{itemize}
+
+\cvtag{Clojure}
+\cvtag{Pattern Matching}
+\cvtag{Library Development}
+\medskip
+
 \end{document}
+
