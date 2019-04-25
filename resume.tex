@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%
 % This is an sample CV template created using altacv.cls
 % (v1.1.4, 27 July 2018) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
-% 
+%
 %% It may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.3
 %% of this license or (at your option) any later version.
@@ -39,7 +39,7 @@
 \begin{document}
 
 \name{LUKE COOK}
-\tagline{Computer Scientist --- Problem Solver --- Abstract Thinker}
+\tagline{Software Engineer}
 
 \personalinfo{%
   \email{invocatis@gmail.com}
@@ -53,13 +53,25 @@
 \makecvheader
 \end{fullwidth}
 
-\cvsection[page1sidebar]{Experience}
+\begin{quote}
+I am a computer scientist, who wants to work in the software field using functional programming, microservice architecture, and strong abstractions
+\end{quote}
 
-\cvevent{Software Engineer Coop}{Intuit}{January 2017 - July 2017}{Mountain View, California}
+\cvsection[page1sidebar]{Education}
+
+\cvevent{Bachelor's of Computer Science}{Rochester Institute of Technology}{2012-2017}{Rochester, Ny}
+
+\cvsection{Experience}
+
+\cvevent{Software Engineer Coop}{Intuit}{January 2018 - July 2018}{Mountain View, California}
 \begin{itemize}
-    \item Account signup backend development & implementation
+    \item Account signup backend development \& implementation
     \item Worked in Agile team with daily standups, weekly meetings, and bi-weekly sprints
+    \item Wrote a Java API for document upload, indexing documents in SQL Database and storing in AWS S3
+    \item Created slash command for integrating SQL within Slack written in Clojure. Supported macros to simplify complicated statements, Slack context namespaces (user, team, channel, or global), and any SQL flavor that had a driver loaded into the microservice.
 \end{itemize}
+
+\bigskip
 
 \cvtag{Java}
 \cvtag{Oracle SQL}
@@ -68,14 +80,22 @@
 \cvtag{REST}
 \cvtag{OOP}
 \cvtag{Agile}
+\cvtag{Slack}
+\cvtag{CFG}
+\cvtag{Clojure}
 
 \divider
 
-\cvevent{Point-of-Sale Development}{Swiftwater Brewing}{}{Rochester, NY}
+\cvevent{Point-of-Sale Development}{Swiftwater Brewing}{January 2015 - Now}{Rochester, NY}
 \begin{itemize}
-    \item Created a Point of Sale solution, setup network model, worked with credit card processers
+    \item Created a Point of Sale solution in Java and Java Swing, with MySQL Database
+    \item Fulfilled credit card processing standards of security (PCI-DSS), ensuring the safe handling of credit card data
+    \item Manage network architecture; setup OpenVPN to allow remote access to brewerery equipment and POS system for maintenance.
     \item Worked as a bartender, using my solution and being around those who used it. Listened to their stories, complaints, and suggestions and incorporated them as new features.
+    \item Introduced Slack as means of communication, especially for shift coverage
 \end{itemize}
+
+\bigskip
 
 \cvtag{Java}
 \cvtag{Java Swing}
@@ -83,38 +103,4 @@
 \cvtag{PCI/DSS}
 \cvtag{Linux}
 
-\cvsection{Projects}
-
-\cvevent{Flip}{Polyglot Database Solution}{}{}
-
-\begin{itemize}
-    \item Provides logic for creating, and including data-management modules
-    \item Modules are applied to abstract data points, in a linear pipeline
-    \item Modules provide common features from existinc database solutions [id schemes, field inclusion/exclusion, data types/sizes, inheritance]
-\end{itemize}
-
-\cvtag{Clojure}
-\cvtag{SQL}
-\cvtag{NoSQL}
-\cvtag{Database Solutions}
-\cvtag{Library Development}
-\divider
-
-\cvevent{Motif}{Recursive Pattern Matching}{}{}
-
-\vspace{-0.2cm}
-\github{github.com/invocatis/motif}\\
-\vspace{0.2cm}
-
-\begin{itemize}
-    \item Comprehensive, clean DSL for matching features of recursive, mixed data structures
-    \item Patterns are data: Clojure collections and functions compose into patterns
-\end{itemize}
-
-\cvtag{Clojure}
-\cvtag{Pattern Matching}
-\cvtag{Library Development}
-\medskip
-
 \end{document}
-
