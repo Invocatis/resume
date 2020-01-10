@@ -22,7 +22,7 @@
 \usepackage[default]{lato}
 
 \definecolor{Bluish}{HTML}{006080}
-\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{SlateGrey}{HTML}{2E2E6E}
 \definecolor{LightGrey}{HTML}{666666}
 
 \colorlet{heading}{Black}
@@ -54,19 +54,41 @@
 \end{fullwidth}
 
 \begin{quote}
-Computer scientist, who wants to work in the software field using functional programming, microservice architecture, and strong abstractions
+
 \end{quote}
 
-\cvsection[page1sidebar]{Education}
+\cvsection[page1sidebar]{Experience}
 
-\cvevent{Bachelor's of Computer Science}{Rochester Institute of Technology}{2012-2017}{Rochester, New York}
+\cvevent{Application Programmer II}{Cornell University}{June 2019 - Present}{Ithaca, New York}
+\begin{itemize}
+    \item Worked on backend of Genomic Data ETL application
+    \item Refactored and redesigned legacy code base
+    \item Developed a framework for automated system testing; focused on composability, ease of use, and self-cleanup
+    \begin{itemize}
+      \item[--] Developed domain-specific scripting language to simplify semantic layer of test suite in 3 layers: Arrange/Act, Assert, and Cleanup
+      \item[--] Was implemented in 3 layers: A framework backend (written in Clojure), a business logic middle layer (Written in Java), and a testing logic script suite (Written in syntax defined by backend framework)
+      \item[--] Cleanup ensured automatic test independence and idempotency
+      \item[--] Produced JUnit results for integration with Bamboo CI/CD Pipeline
+    \end{itemize}
+\end{itemize}
 
-\cvsection{Experience}
+\bigskip
+
+\cvtag{Java}
+\cvtag{Bamboo}
+\cvtag{Clojure}
+\cvtag{Bash}
+\cvtag{Docker}
+\cvtag{PostgreSQL}
+\cvtag{Object-Oriented Design}
+\cvtag{Layered Architecture}
+
+\divider
 
 \cvevent{Software Engineer Coop}{Intuit}{January 2018 - July 2018}{Mountain View, California}
 \begin{itemize}
-    \item Account signup backend development \& implementation
-    \item Worked in Agile team with daily standups, weekly meetings, and bi-weekly sprints
+    \item  Back end of Account Signup Springboot Application
+    \item  Agile team with daily standups, weekly meetings, and bi-weekly sprints
     \item Wrote a Java API for document upload, indexing documents in SQL Database and storing in AWS S3
     \item Created slash command for integrating SQL within Slack written in Clojure. Supported macros to simplify complicated statements, Slack context namespaces (user, team, channel, or global), and any SQL flavor that had a driver loaded into the microservice.
 \end{itemize}
@@ -80,19 +102,18 @@ Computer scientist, who wants to work in the software field using functional pro
 \cvtag{REST}
 \cvtag{OOP}
 \cvtag{Agile}
-\cvtag{Slack}
+\cvtag{Slack API}
 \cvtag{CFG}
 \cvtag{Clojure}
 
 \divider
 
-\cvevent{Point-of-Sale Development}{Swiftwater Brewing}{January 2015 - Now}{Rochester, NY}
+\cvevent{Point-of-Sale Development}{Swiftwater Brewing}{2015 - Present}{Rochester, NY}
 \begin{itemize}
     \item Created a Point of Sale solution in Java and Java Swing, with MySQL Database
     \item Fulfilled credit card processing standards of security (PCI-DSS), ensuring the safe handling of credit card data
     \item Manage network architecture; setup OpenVPN to allow remote access to brewerery equipment and POS system for maintenance.
     \item Worked as a bartender, using my solution and being around those who used it. Listened to their stories, complaints, and suggestions and incorporated them as new features.
-    \item Introduced Slack as means of communication, especially for shift coverage
 \end{itemize}
 
 \bigskip
