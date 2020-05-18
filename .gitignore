@@ -4,3 +4,4 @@
 *.bbl
 *.bcf
 *.aux
+.DS_Store
