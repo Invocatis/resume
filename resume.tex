@@ -24,9 +24,11 @@
 \definecolor{Bluish}{HTML}{006080}
 \definecolor{SlateGrey}{HTML}{2E2E6E}
 \definecolor{LightGrey}{HTML}{666666}
+\definecolor{Gold}{HTML}{ffaa00}
+\definecolor{DarkBlue}{HTML}{111144}
 
-\colorlet{heading}{Black}
-\colorlet{accent}{Bluish}
+\colorlet{heading}{DarkBlue}
+\colorlet{accent}{Gold}
 \colorlet{emphasis}{SlateGrey}
 \colorlet{body}{LightGrey}
 
@@ -59,17 +61,33 @@
 
 \cvsection[page1sidebar]{Experience}
 
-\cvevent{Application Programmer II}{Cornell University}{June 2019 - Present}{Ithaca, New York}
+\cvevent{Software Engineer Contractor}{Hyperfiddle}{June 2020 - Present}{Remote}
 \begin{itemize}
-    \item Worked on backend of Genomic Data ETL application
-    \item Refactored and redesigned legacy code base
+  \item Full stack development for CRUD App framework
+\end{itemize}
+
+\bigskip
+
+\cvtag{Clojure}
+\cvtag{Clojurescript}
+\cvtag{Datomic}
+
+\divider
+
+\cvevent{Application Programmer II}{Cornell University}{June 2019 - June 2020}{Ithaca, New York}
+\begin{itemize}
+    \item Backend of Genomic Data ETL application
+    \item Created CSV file digest framework
+    \begin{itemize}
+      \item[--] Data is streamed from file to PostgreSQL Database
+      \item[--] JSON file declares how table rows are gotten from file
+    \end{itemize}
     \item Developed a framework for automated system testing; focused on composability, ease of use, and self-cleanup
     \begin{itemize}
       \item[--] Developed domain-specific scripting language to simplify semantic layer of test suite in 3 layers: Arrange/Act, Assert, and Cleanup
       \item[--] Was implemented in 3 layers: A framework backend (written in Clojure), a business logic middle layer (Written in Java), and a testing logic script suite (Written in syntax defined by backend framework)
       \item[--] Cleanup ensured automatic test independence and idempotency
       \item[--] Produced JUnit results for integration with Bamboo CI/CD Pipeline
-    \end{itemize}
 \end{itemize}
 
 \bigskip
@@ -87,10 +105,10 @@
 
 \cvevent{Software Engineer Coop}{Intuit}{January 2018 - July 2018}{Mountain View, California}
 \begin{itemize}
-    \item  Back end of Account Signup Springboot Application
-    \item  Agile team with daily standups, weekly meetings, and bi-weekly sprints
-    \item Wrote a Java API for document upload, indexing documents in SQL Database and storing in AWS S3
-    \item Created slash command for integrating SQL within Slack written in Clojure. Supported macros to simplify complicated statements, Slack context namespaces (user, team, channel, or global), and any SQL flavor that had a driver loaded into the microservice.
+    % \item  Back end of Account Signup Springboot Application
+    % \item  Agile team with daily standups, weekly meetings, and bi-weekly sprints
+    % \item Wrote a Java API for document upload, indexing documents in SQL Database and storing in AWS S3
+    % \item Created slash command for integrating SQL within Slack written in Clojure. Supported macros to simplify complicated statements, Slack context namespaces (user, team, channel, or global), and any SQL flavor that had a driver loaded into the microservice.
 \end{itemize}
 
 \bigskip
@@ -110,10 +128,10 @@
 
 \cvevent{Point-of-Sale Development}{Swiftwater Brewing}{2015 - Present}{Rochester, NY}
 \begin{itemize}
-    \item Created a Point of Sale solution in Java and Java Swing, with MySQL Database
-    \item Fulfilled credit card processing standards of security (PCI-DSS), ensuring the safe handling of credit card data
-    \item Manage network architecture; setup OpenVPN to allow remote access to brewerery equipment and POS system for maintenance.
-    \item Worked as a bartender, using my solution and being around those who used it. Listened to their stories, complaints, and suggestions and incorporated them as new features.
+    % \item Created a Point of Sale solution in Java and Java Swing, with MySQL Database
+    % \item Fulfilled credit card processing standards of security (PCI-DSS), ensuring the safe handling of credit card data
+    % \item Manage network architecture; setup OpenVPN to allow remote access to brewerery equipment and POS system for maintenance.
+    % \item Worked as a bartender, using my solution and being around those who used it. Listened to their stories, complaints, and suggestions and incorporated them as new features.
 \end{itemize}
 
 \bigskip
