@@ -6,17 +6,19 @@
 
 \cvsection{Languages}
 
-\cvskill{Clojure(script)}{4}
+\cvskill{Clojure(script)}{5}
 \cvskill{Java}{4}
-\cvskill{Kotlin}{2}
-\cvskill{Scala}{2}
-% \cvskill{Javascript}{2}
 \cvskill{Haskell}{2}
+% \cvskill{Kotlin}{2}
+% \cvskill{Scala}{2}
+% \cvskill{Javascript}{2}
 
 \cvsection{Technical Skills}
-\cvtag{MySQL}
-\cvtag{PostgreSQL}
-\cvtag{MongoDB}\cvtag{Bamboo}
+\cvtag{SQL}
+\cvtag{MongoDB}
+\cvtag{Bamboo}
+\cvtag{CircleCI}
+\cvtag{AWS}
 \cvtag{Datomic}
 \cvtag{Git}
 \cvtag{Docker}
@@ -43,19 +45,29 @@
 \vspace{0.2cm}
 
 \begin{itemize}
-  \item CSS-like DSL for state dependencies, and transitions
-  \item Gives robust ability to select and add attributes or arguments to hiccup structures
-  \item Separates state and view logic elegantly
+  \item CSS-like DSL for Reagent state dependencies
+  \item Allows separation of view and state code; no atoms in view code
+  \item Optimized to work with Reagent.
 \end{itemize}
 
 \divider
 
-\cvevent{flip}{Polyglot Database Solution}{}{}
+\cvevent{eldritch}{Algebraic Data Types \& Pattern Matching}{}{}
+\github{github.com/invocatis/eldritch}
+\vspace{0.2cm}
 \begin{itemize}
-    \item Provides logic for creating, and including data-management modules
-    % \item Modules are applied to abstract data points, in a linear pipeline
-    \item Modules provide common features from existinc database solutions [id schemes, field inclusion/exclusion, data types/sizes, inheritance]
+    \item Create algebraic data types using the `data` macro; extend types with Java interfaces and Clojure protocols
+    \item Pattern matching creates efficient compile time and runtime matching algorithms.
+    \item define macro allows pattern matching to be used in function definitions; creates multimethod-like polymorhpism.
 \end{itemize}
+
+
+% \cvevent{flip}{Polyglot Database Solution}{}{}
+% \begin{itemize}
+%     \item Provides logic for creating, and including data-management modules
+%     % \item Modules are applied to abstract data points, in a linear pipeline
+%     \item Modules provide common features from existinc database solutions [id schemes, field inclusion/exclusion, data types/sizes, inheritance]
+% \end{itemize}
 %
 % \cvtag{Clojure}
 % \cvtag{SQL}
