@@ -9,10 +9,10 @@
 
 **Rochester Institute of Technology**
 
-**Email:** invocatis@gmail.com
-**Location:** New York, United States
-**LinkedIn:** [linkedin.com/in/invocatis](https://www.linkedin.com/in/invocatis)
-**GitHub:** [github.com/invocatis](https://www.github.com/invocatis)
+- **Email:** invocatis@gmail.com
+- **Location:** New York, United States
+- **LinkedIn:** [linkedin.com/in/invocatis](https://www.linkedin.com/in/invocatis)
+- **GitHub:** [github.com/invocatis](https://www.github.com/invocatis)
 
 ---
 
@@ -20,9 +20,9 @@
 
 ### Senior Software Engineer (2022-2023)
 ### Software Engineer (2020-2022)
-**Datasembly**
-**Location:** Remote
-**Duration:** March 2020 - July 2024
+- **Datasembly**
+- **Location:** Remote
+- **Duration:** March 2020 - July 2024
 
 #### Responsibilities
 - Build & maintain web scrapers for grocery domain data
@@ -50,9 +50,9 @@
 ---
 
 ### Software Engineer Contractor
-**Hyperfiddle**
-**Location:** Remote
-**Duration:** March 2020 - September 2020
+- **Hyperfiddle**
+- **Location:** Remote
+- **Duration:** March 2020 - September 2020
 
 #### Responsibilities
 - Development on Full Stack Clojure(script), Datomic CRUD application framework
@@ -76,9 +76,9 @@
 ---
 
 ### Application Programmer II
-**Cornell University**
-**Location:** Ithaca, New York
-**Duration:** June 2019 - June 2020
+- **Cornell University**
+- **Location:** Ithaca, New York
+- **Duration:** June 2019 - June 2020
 
 #### Responsibilities
 - Worked on backend of genomic data ETL application
