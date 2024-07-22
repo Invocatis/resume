@@ -1,25 +1,26 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Luke Cook - Resume</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-
     * {
-      margin: 0;
+      /* border: thin solid grey; */
+      font-size: 10pt;
+      margin: 0.0em;
     }
 
 
-    div {
-      display: inline-block;
-      /* border: 1px solid grey; */
-    }
-
-    a {
-      all:inherit
-
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      position: absolute;
+      padding: 1em;
     }
 
     em {
@@ -31,156 +32,233 @@
       padding-left: 0.5cm;
     }
 
-    #main {
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 0.85em;
-      position: absolute;
-      height: 11in;
-      width: 8.5in;
-      padding: 0.25in;
-    }
-
-    #main > div {
-      float: left;
-    }
-
-    .info {
-      margin-bottom: 1%;
-    }
-
-    .subsection {
-      width: 30%;
-      margin-bottom: 20px;
-    }
-
-    .project {
-      margin-top: 15px;
-    }
-
-    .experience * {
-      margin: 0.3%;
-    }
-
-    .skills .bubble {
-      float: left;
-      border: thin solid grey;
-      border-radius: 0.4em;
-      margin: 0.25em;
-      padding: 0.25em;
+    h1 {
+      font-size: 2em;
     }
 
     h2 {
-      margin-right: 1em;
-      margin-bottom: 0.1em;
-      border-bottom: 5px solid #1b3380;
+      font-size: 1.25em;
+      margin-bottom: 0.25em;
     }
-    
+
     h4 {
-      color: #ffc60a;
+      color: #1b3380;
     }
 
-    .experiences {
-      width: 69%;
+    hr.major {
+      margin: 1em;
+      height: 0.05em;
+      background-color: black;
     }
 
-    .language > * {
-      width: 100%;
-      margin: 1%;
+    hr.minor {
+      margin: 0.5em;
     }
 
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 100%;
-      border: none;
+    .fa {
+      margin-right: 1em;
+      width: 1em;
     }
 
-    .dot.filled {
-      border: 1px solid #1b3380;
-      background-color: #1b3380;
+    header .info {
+      display: flex;
+      flex-wrap: wrap;
     }
 
-    .dot:is(:not(.filled)) {
-      border: 1px solid grey;
+    header .info > div {
+      flex: 1 1 0px;
+      background-color: #f0f0f0;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      min-width: fit-content;
     }
 
-    .languages {
-      display: flexbox;
+    .experience {
+      width: 100%
     }
 
-    .language {
-      float: left;
+    .experience .info {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .experience .info > * {
+      flex: 1 1 50%;
+      background-color: #f0f0f0;
+      padding: 5px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      min-width: fit-content;
+    }
+
+    .experience .details {
+      margin-top: 1em;
+      padding-left: 1em;
+    }
+
+    .skills {
+      margin-top: 1em;
+    }
+
+    .skills .bubble {
+      border: thin solid grey;
+      border-radius: 0.4em;
+      padding: 0.25em;
+      display: inline-block;
+    }
+
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .project {
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
       flex: 1;
+      box-sizing: border-box;
+      padding: 10px;
     }
 
+    @page {
+      size: 8.5in 11in;
+      margin-top: 4em;
+    }
+
+    @media print {
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      header .info > div {
+        padding: 5px;
+        width: 33%;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+
+      header .info > div {
+        flex: 1 0 100%;
+      }
+
+      .experience .info * {
+        margin-top: 0.5em;
+      }
+
+      .project {
+        flex: 1 0 100%;
+      }
+
+      .experience .info > * {
+        flex: 1 0 100%;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <header>
+    <h1>Luke Cook</h1>
+    <hr class="minor">
+    <div class="info">
+      <div><i class="fa fa-graduation-cap"></i>Computer Science (BS) - 2017</div>
+      <div><i class="fa fa-university"></i>Rochester Institute of Technology</div>
+      <div><i class="fa fa-at"></i>invocatis@gmail.com</div>
+      <div><i class="fa fa-map-marker"></i>New York, United States</div>
+      <div><i class="fa fa-brands fa-linkedin-in"></i><a
+          href="https://www.linkedin.com/in/invocatis">linkedin.com/in/invocatis</a></div>
+      <div><i class="fa fa-brands fa-github"></i><a
+          href="https://www.github.com/invocatis">github.com/invocatis</a></div>
+    </div>
+  </header>
 
+  <hr class="major">
 
-  <div id="main">
-
-    <header>
-      <h1>Luke Cook</h1>
-      <h4>Software Engineer</h4>
-      <div class="info">
-        <span><i class="fa-solid fa-at"></i> invocatis@gmail.com</span>
-        <span><i class="fa-solid fa-phone"></i>New York, United States</span>
-        <span><i class="fa-brands fa-linkedin-in"></i> <a href="https://www.linkedin.com/in/invocatis">linkedin.com/in/invocatis</a></span>
-        <span><i class="fa-brands fa-github"></i> <a href="https://www.github.com/invocatis">github.com/invocatis</a></span>
-      </div>
-    </header>
-
-    <div class="experiences">
-      <h2>Experience</h2>
+  <main>
+    <h2>Experience</h2>
+    <article class="experiences">
       <div class="experience">
-        <h3>Software Engineer (2020-2022)</h3>
-        <h3>Senior Software Engineer (2022-2023)</h3>
-        <h4>Datasembly</h4>
-        <span class="date">March 2020 - Present</span>
-        <span class="location">[Remote]</span>
-        <h5>Responsibilities</h5>
-        <ul>
-          <li>Build, maintain, and upgrade web scrapers for grocery domain data
-          <li>Reverse engineer site APIs for scraping.</li>
-          <li>React to bot detection; develop and apply obfuscation techniques.</li>
-          <li>Deeply understand source data models; adapt to standardized model</li>
-          </li>
-        </ul>
-        <ul>
-          <li>Developed headless browsing framework; used instruction set to be interpreted both locally, and remotely.</li>
-        </ul>
+        <div class="info">
+          <span style="font-size: 0.8em">
+            <h3>Senior Software Engineer (2022-2023)</h3>
+            <h3>Software Engineer (2020-2022)</h3>
+          </span>
+          <span class="date"><i class="fa fa-calendar"></i>March 2020 - July 2024</span>
+          <h4>Datasembly</h4>
+          <span class="location"><i class="fa fa-map-marker"></i><b>Remote</b></span>
+        </div>
+        <div class="details">
+          <h5>Responsibilities</h5>
+          <ul>
+            <li>Build & maintain web scrapers for grocery domain data</li>
+            <li>Implement architectural advancements to web scraping framework</li>
+            <li>Reverse engineer site APIs; adapt to scraping framework</li>
+            <li>React to bot detection; develop and apply obfuscation techniques</li>
+            <li>Work closely with Product and Customer team to convert website data to actionable insights for customers</li>
+            <li>Lead effort establishing domain-specific term dictionary to unify vocabulary and understanding across the company</li>
+          </ul>
+          <h5>Projects</h5>
+          <ul>
+            <li>Developed headless browsing framework in Scala using Playwright</li>
+            <ul>
+              <li>Proposed, by me, to replace the existing framework written in Puppeteer / Javascript</li>
+              <li>Playwright on the JVM greatly reduced development and deployment complexity; no longer needed to
+                maintain a cluster of headless workers, or a remote execution DSL</li>
+              <li>Enabled scraping of websites that required Javascript execution, had sufficiently complex login APIs,
+                or employed encryption of API request information</li>
+              <li>Framework was developed to easily allow different headless browser libraries to be used</li>
+            </ul>
+            <li>Primary Developer who created & maintained scrapers for Amazon, Instacart, and Shipt</li>
+            <ul>
+              <li>Some of the most complex data sources we collected from</li>
+              <li>Instacart was an easy avenue for collecting new banners, creating fast turn around for new customers</li>
+              <li>Instituted new code paradigms that others could leverage to make scrapers more legible, and stable</li>
+            </ul>
+          </ul>
+        </div>
         <div class="skills">
           <div class="bubble">Scala</div>
+          <div class="bubble">Scala Cats</div>
+          <div class="bubble">Puppeteer / Playwright</div>
           <div class="bubble">SQL</div>
+          <div class="bubble">Snowflake</div>
+          <div class="bubble">GCP</div>
           <div class="bubble">HTTP Protocol</div>
           <div class="bubble">Airflow</div>
           <div class="bubble">Web Scraping</div>
         </div>
       </div>
-      
+
+      <hr class="minor">
+
       <div class="experience">
-        <h3>Software Engineer Contractor</h3>
-        <h4>Hyperfiddle</h4>
-        <span class="date">March 2020 - Septempber 2020</span>
-        <span class="location">[Remote]</span>
-        <h5>Responsibilities</h5>
-        <ul>
-          <li>Develop Full Stack Clojure(script), Datomic CRUD application framework</li>
-          <li>Setup CI/CD pipeline using CircleCI and AWS ECR and ECS, configured in Terraform</li>
-        </ul>
-        <h5>Projects</h5>
-        <ul>
-          <li>Formalized an extensible algebra for Datomic statements</li>
-          <li>Research and Development:</li>
+        <div class="info">
+          <h3>Software Engineer Contractor</h3>
+          <span class="date"><i class="fa fa-calendar"></i>March 2020 - September 2020</span>
+          <h4>Hyperfiddle</h4>
+          <span class="location"><i class="fa fa-map-marker"></i><b>Remote</b></span>
+        </div>
+        <div class="details">
+          <h5>Responsibilities</h5>
           <ul>
-            <li>Reactive streams for rendering in Clojurescript</li>
-            <li>More ergonomic, and idiomatic category theory based programming in Clojure</li>
-            <li>Pattern Matching algorithms</li>
+            <li>Development on Full Stack Clojure(script), Datomic CRUD application framework</li>
+            <li>Setup CI/CD pipeline using CircleCI and AWS ECR and ECS, configured in Terraform</li>
           </ul>
-        </ul>
-        <div class="skills">  
+          <h5>Projects</h5>
+          <ul>
+            <li>Formalized an extensible algebra for Datomic statements</li>
+            <li>Research and Development:</li>
+            <ul>
+              <li>Reactive streams for rendering in Clojurescript</li>
+              <li>More ergonomic, and idiomatic category theory based programming in Clojure</li>
+              <li>Pattern Matching algorithms</li>
+            </ul>
+          </ul>
+        </div>
+        <div class="skills">
           <div class="bubble">Clojure(script)</div>
           <div class="bubble">Datomic</div>
           <div class="bubble">Reactive Streams</div>
@@ -190,32 +268,43 @@
         </div>
       </div>
 
+      <hr class="minor">
 
       <div class="experience">
-        <h3>Application Programmer II</h3>
-        <h4>Cornell University</h4>
-        <span class="date">June 2019 - June 2020</span>
-        <span class="location">[Ithaca, New York]</span>
+        <div class="info">
+          <h3>Application Programmer II</h3>
+          <span class="date"><i class="fa fa-calendar"></i>June 2019 - June 2020</span>
+          <h4>Cornell University</h4>
+          <span class="location"><i class="fa fa-map-marker"></i>Ithaca, New York</span>
+        </div>
 
-        <ul>
-          <li>Worked on backend of genomic data ETL application</li>
-          <li>Created CSV file digest framework
-            <ul>
-              <li>Provided a data file, and a descriptive aspect file, the application produces a stream tuples that would be commited to a database.</li>
-              <li>Aspects would be used to generate streams of cells; these streams would be aligned based on properties of each aspect</li>
-              <li>Written in Java; strong focus on an object oriented design</li>
-            </ul>
-          </li>
-          <li>Developed framework for automated end-to-end testing; focused on composability, ease of use, and self-cleanup
-            <ul>
-              <li>Developed domain-specific scripting language to simplify semantic layer of test suit in 3 layers: Arrange/Act, Assert, and Cleanup</li>
-              <li>Was built in 3 separate components: A language backend (written in Clojure), a business logic middle layer (written in Java), and a testing logic script suite (written in custom syntax)</li>
-              <li>Cleanup ensured automatic test independence and idempotency; tests were often run on deployed production environments</li>
-            </ul>
-          </li>
-        </ul>
-        
-        <div class="skills">  
+        <div class="details">
+          <ul>
+            <li>Worked on backend of genomic data ETL application</li>
+            <li>Created CSV file digest framework
+              <ul>
+                <li>Provided a data file, and a descriptive aspect file, the application produces a stream tuples that
+                  would be committed to a database.</li>
+                <li>Aspects would be used to generate streams of cells; these streams would be aligned based on
+                  properties of each aspect</li>
+                <li>Written in Java; strong focus on an object-oriented design</li>
+              </ul>
+            </li>
+            <li>Developed framework for automated end-to-end testing; focused on composability, ease of use, and
+              self-cleanup
+              <ul>
+                <li>Developed domain-specific scripting language to simplify semantic layer of test suit in 3 layers:
+                  Arrange/Act, Assert, and Cleanup</li>
+                <li>Was built in 3 separate components: A language backend (written in Clojure), a business logic middle
+                  layer (written in Java), and a testing logic script suite (written in custom syntax)</li>
+                <li>Cleanup ensured automatic test independence and idempotency; tests were often run on deployed
+                  production environments</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skills">
           <span class="bubble">Java</span>
           <span class="bubble">Clojure</span>
           <span class="bubble">Docker</span>
@@ -223,78 +312,41 @@
           <span class="bubble">Object-Oriented Design</span>
         </div>
       </div>
+    </article>
 
-    </div>
+    <hr class="major">
 
-    <div class="subsection">
-      <h2>Education</h2>
-      <h5>Bachelor’s of Computer Science</h5>
-      <h5>Rochester Institute of Technology</h5>
-      <span>2017</span>
-      <span>Rochester, NY</span>
-    </div>
-
-    <div class="languages subsection">
-      <h3>Languages</h3>
-      <span class="language">
-        <span class="title">Scala</span>
-        <div class="level">
-          <div class="dot filled"></div>
-          <div class="dot filled"></div>
-          <div class="dot filled"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-        </div>
-      </span>
-      <span class="language">
-        <span class="title">Clojure</span>
-        <div class="level">
-          <div class="dot filled"></div>
-          <div class="dot filled"></div>
-          <div class="dot filled"></div>
-          <div class="dot filled"></div>
-          <div class="dot"></div>
-        </div>
-      </span>
-      <span class="language">
-        <span>Java</span>
-        <div class="level">
-          <div class="dot filled"></div>
-          <div class="dot filled"></div>
-          <div class="dot filled"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-        </div>
-      </span>
-    </div>
-
-    <div class="projects subsection">
-      <h2>Projects</h2>
+    <h2>Projects</h2>
+    <div class="projects">
       <div class="project">
-        <h4>eldritch</h3>
-          <h5>Algebraic Data Types & Pattern Matching
-        </h4>
+        <h4>eldritch</h4>
+        <i>Algebraic Data Types & Pattern Matching</i>
+        <br>
         <a href="https://www.github.com/invocatis/eldritch">github.com/invocatis/eldritch</a>
-        <ul>
-          <li>Create algebraic data types using the <em>data</em> macro; extend types with Java interfaces and Clojure protocols
-          </li>
-          <li>Patterns are compiled into efficient algorithms, either at runtime or compile time</li>
-          <li><em>define</em> macro allows pattern matching to be used in function definitions; creates multimethod-like
-            polymorhpism.</li>
-        </ul>
       </div>
       <div class="project">
-        <h4>motif</h3>
-        <h5>Recursive Pattern Matching in Clojure</h4>
-          <a href="https://www.github.com/invocatis/motif">github.com/invocatis/motif</a>
-        <ul>
-          <li>Comprehensive, clean DSL for matching features of recursive, mixed data structures</li>
-          <li>Patterns are data: Clojure collections and functions compose into patterns</li>
-        </ul>
+        <h4>motif</h4>
+        <i>Recursive Pattern Matching in Clojure</i>
+        <br>
+        <a href="https://www.github.com/invocatis/motif">github.com/invocatis/motif</a>
+      </div>
+      <div class="project">
+        <h4>ernie</h4>
+        <i>Testing Framework for Java, written in Clojure</i>
+        <br>
+        <a href="https://www.github.com/invocatis/ernie">github.com/invocatis/ernie</a>
+      </div>
+      <div class="project">
+        <h4>Scala 3 Algebraic Type Exploration</h4>
+        <i>An exploration of algebraic concepts.</i>
+        <br>
+        <i>Defined in Scala 3's type system</i>
+        <br>
+        <a
+          href="https://github.com/Invocatis/scala3-algebraic-type-exploration">github.com/invocatis/scala3-algebraic-type-exploration</a>
       </div>
     </div>
-  </div>
-
+  </main>
 </body>
 
 </html>
