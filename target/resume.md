@@ -61,14 +61,16 @@ Location:  **Hyperfiddle**
 
 ##### Projects
 
-- Datomic algebra
-	- Formalized extensible algebra for Datomic statements
+- Formalized extensible algebra for Datomic statements
+	- Algebra supported simplification of negating statments (eg. 1 + -1 = 0)
+	- Frontend logic would submit new statements on change, and the state would self simplify
+	- Datomic statements were proved to form an Algebraic Group
 - Research and Development
 	- Reactive streams in Clojurescript
 	- Category theory-based programming in Clojure
 	- Pattern Matching algorithms
 
-Skills Used: Clojure(script) | Datomic | Reactive Streams | Haxe | AWS ECS | Docker
+Skills Used: Clojure(script) | Datomic | Reactive Streams | Haxe | AWS | Terraform | Docker
 
 ### Application Programmer II 
 

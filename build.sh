@@ -1,4 +1,4 @@
-fswatch $(find . -name "*.clj") | while read file; do
+fswatch $(find . -name "*.clj") resources/data.edn | while read file; do
   echo "Change detected, rebuilding..."
 
   bb src/builds/html.clj > target/resume.html || echo "HTML Error"

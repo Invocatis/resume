@@ -41,9 +41,11 @@
                :details {:responsibilities
                          ["Full Stack Clojure(script) Datomic CRUD application development"
                           "Set up CI/CD pipeline using CircleCI AWS ECR and ECS Terraform"]
-                         :projects [{:name "Datomic algebra"
+                         :projects [{:name "Formalized extensible algebra for Datomic statements"
                                      :details
-                                     ["Formalized extensible algebra for Datomic statements"]}
+                                     ["Algebra supported simplification of negating statments (eg. 1 + -1 = 0)"
+                                      "Frontend logic would submit new statements on change, and the state would self simplify"
+                                      "Datomic statements were proved to form an Algebraic Group"]}
                                     {:name "Research and Development"
                                      :details ["Reactive streams in Clojurescript"
                                                "Category theory-based programming in Clojure"
@@ -52,7 +54,8 @@
                         "Datomic"
                         "Reactive Streams"
                         "Haxe"
-                        "AWS ECS"
+                        "AWS"
+                        "Terraform"
                         "Docker"]}
               {:roles [{:title "Application Programmer II"}]
                :duration "June 2019 - June 2020"

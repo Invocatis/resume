@@ -2,7 +2,7 @@
 
 (load-file "src/util/markdown.clj")
 
-(def resume-data (clojure.edn/read-string (slurp "data.edn")))
+(def resume-data (clojure.edn/read-string (slurp "resources/data.edn")))
 
 (defn nested-list->ul
   [list]
