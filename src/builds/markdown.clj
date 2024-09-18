@@ -8,7 +8,7 @@
   [list]
   (into
    [:ul]
-   (map (fn [li] (if (seq? li) (nested-list->ul li) [:li li])) list)))
+   (map (fn [li] (if (vector? li) (nested-list->ul li) [:li li])) list)))
 
 (defn section|personal-info
   [{:keys [email location linkedin github]} {:keys [degree year institution]}]
@@ -40,12 +40,7 @@
   [projects]
   [:div
    [:h5 "Projects"]
-   (->>
-     projects
-     (map (fn [{:keys [name details]}]
-            [[:li name]
-             (nested-list->ul details)]))
-     (reduce into [:ul]))])
+   (nested-list->ul projects)])
 
 (defn experience|skills
   [skills]
@@ -82,7 +77,6 @@
      [:div
       [:h4 name]
       [:i description]
-      [:br]
       [:a {:href link}]])))
 
 (defn generate-resume
