@@ -86,7 +86,7 @@
      [:meta {:charset "UTF-8"}]
      [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
      [:title name]
-     [:style (hiccup2.core/raw (slurp "resources/style.css"))]
+     [:style (hiccup2.core/raw (clojure.string/replace (slurp "resources/style.css") #"\n" ""))]
      [:link {:rel "stylesheet"
              :href "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
              :integrity "sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
