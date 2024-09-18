@@ -1,0 +1,100 @@
+{:name "Luke Cook"
+ :contact {:email "invocatis@gmail.com"
+           :location "New York United States"
+           :linkedin "https://www.linkedin.com/in/invocatis"
+           :github "https://www.github.com/invocatis"}
+ :education {:degree "Bachelor's in Computer Science"
+             :institution "Rochester Institute of Technology"
+             :year 2017}
+ :experience [{:roles [{:title "Senior Software Engineer" :duration "2022-2024"}
+                       {:title "Software Engineer" :duration "2020-2022"}]
+               :duration "December 2020 - July 2024"
+               :company "Datasembly"
+               :location "Remote"
+               :details {:responsibilities ["Build & maintain web scrapers for grocery domain data"
+                                            "Implement architectural advancements to web scraping framework"
+                                            "Reverse engineer site APIs; adapt to scraping framework"
+                                            "React to bot detection; develop and apply obfuscation techniques"
+                                            "Work with Product and Customer teams to convert data to actionable insights"
+                                            "Lead domain-specific dictionary initiative"]
+                         :projects [{:name "Headless browsing framework"
+                                     :details ["Proposed and developed a framework replacing Puppeteer"
+                                               "Reduced complexity enabled scraping with JavaScript execution"
+                                               "Support for multiple headless browser libraries"]}
+                                    {:name "Amazon Instacart and Shipt scrapers"
+                                     :details ["Developed scrapers for complex data sources"
+                                               "Created fast turnaround for new customers via Instacart integration"
+                                               "Introduced new code paradigms for stability and legibility"]}]}
+               :skills ["Scala"
+                        "Scala Cats"
+                        "Puppeteer / Playwright"
+                        "SQL"
+                        "Snowflake"
+                        "GCP"
+                        "HTTP Protocol"
+                        "Airflow"
+                        "Web Scraping"]}
+              {:roles [{:title "Software Engineer Contractor"}]
+               :duration "March 2020 - September 2020"
+               :company "Hyperfiddle"
+               :location "Remote"
+               :details {:responsibilities
+                         ["Full Stack Clojure(script) Datomic CRUD application development"
+                          "Set up CI/CD pipeline using CircleCI AWS ECR and ECS Terraform"]
+                         :projects [{:name "Formalized extensible algebra for Datomic statements"
+                                     :details
+                                     ["Algebra supported simplification of negating statments (eg. 1 + -1 = 0)"
+                                      "Frontend logic would submit new statements on change, and the state would self simplify"
+                                      "Datomic statements were proved to form an Algebraic Group"]}
+                                    {:name "Research and Development"
+                                     :details ["Reactive streams in Clojurescript"
+                                               "Category theory-based programming in Clojure"
+                                               "Pattern Matching algorithms"]}]}
+               :skills ["Clojure(script)"
+                        "Datomic"
+                        "Reactive Streams"
+                        "Haxe"
+                        "AWS"
+                        "Terraform"
+                        "Docker"]}
+              {:roles [{:title "Application Programmer II"}]
+               :duration "June 2019 - June 2020"
+               :company "Cornell University"
+               :location "Ithaca New York"
+               :details {:responsibilities
+                         ["Improved backend of genomic data ETL application"
+                          "Created CSV file digest framework"
+                          "Developed end-to-end testing framework"]
+                         :projects
+                         [{:name "CSV file digest framework"
+                           :technology "Java"
+                           :details ["Streamed file data object-oriented design"]}
+                          {:name "Testing framework"
+                           :technology ["Clojure" "Java"]
+                           :details
+                           ["Built domain-specific language for test automation"
+                            "Focused on composability ease of use and cleanup"]}]}
+               :skills ["Java" "Clojure" "Docker" "PostgreSQL" "Object-Oriented Design"]}]
+ :skills ["Java"
+          "Clojure(script)"
+          "Scala"
+          "Docker"
+          "Google Cloud"
+          "Aiflow"
+          "Snowflake"
+          "Airflow"
+          "SQL"]
+ :projects
+ [{:name "eldritch"
+   :description "Algebraic Data Types & Pattern Matching"
+   :link "https://www.github.com/invocatis/eldritch"}
+  {:name "motif"
+   :description "Recursive Pattern Matching in Clojure"
+   :link "https://www.github.com/invocatis/motif"}
+  {:name "ernie"
+   :description "Testing Framework for Java written in Clojure"
+   :link "https://www.github.com/invocatis/ernie"}
+  {:name "Scala 3 Algebraic Type Exploration"
+   :description "Exploration of algebraic concepts defined in Scala 3"
+   :link
+   "https://github.com/Invocatis/scala3-algebraic-type-exploration"}]}

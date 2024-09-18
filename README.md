@@ -1,4 +1,4 @@
 
 # Luke Cook
 
-[View](https://invocatis.github.io/resume/resume.html)
+[View](https://invocatis.github.io/resume/target/resume.html)
