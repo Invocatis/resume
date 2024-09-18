@@ -17,39 +17,39 @@
                                             "React to bot detection; develop and apply obfuscation techniques"
                                             "Work with Product and Customer teams to convert data to actionable insights"
                                             "Lead domain-specific dictionary initiative"]
-                         :projects [{:name "Headless browsing framework"
-                                     :details ["Proposed and developed a framework replacing Puppeteer"
-                                               "Reduced complexity enabled scraping with JavaScript execution"
-                                               "Support for multiple headless browser libraries"]}
-                                    {:name "Amazon Instacart and Shipt scrapers"
-                                     :details ["Developed scrapers for complex data sources"
-                                               "Created fast turnaround for new customers via Instacart integration"
-                                               "Introduced new code paradigms for stability and legibility"]}]}
-               :skills ["Scala"
-                        "Scala Cats"
-                        "Puppeteer / Playwright"
-                        "SQL"
-                        "Snowflake"
-                        "GCP"
-                        "HTTP Protocol"
-                        "Airflow"
-                        "Web Scraping"]}
+                         :projects ["Developed headless browsing framework in Scala using Playwright"
+                                    ["Proposed, by me, to replace the existing framework written in Puppeteer / Javascript"
+                                     "Playwright on the JVM greatly reduced development and deployment complexity; no longer needed to maintain a cluster of headless workers, or a remote execution DSL"
+                                     "Enabled scraping of websites that required Javascript execution, had sufficiently complex login APIs, or employed encryption of API request information"
+                                     "Framework was developed to easily allow different headless browser libraries to be used"]
+                                    "Primary Developer who created & maintained scrapers for Amazon, Instacart, and Shipt"
+                                    ["Some of the most complex data sources we collected from"
+                                     "Instacart was an easy avenue for collecting new banners, creating fast turn around for new customers"
+                                     "Instituted new code paradigms that others could leverage to make scrapers more legible, and stable"]]}
+                         :skills ["Scala"
+                                  "Scala Cats"
+                                  "Puppeteer / Playwright"
+                                  "SQL"
+                                  "Snowflake"
+                                  "GCP"
+                                  "HTTP Protocol"
+                                  "Airflow"
+                                  "Web Scraping"]}
               {:roles [{:title "Software Engineer Contractor"}]
                :duration "March 2020 - September 2020"
                :company "Hyperfiddle"
                :location "Remote"
                :details {:responsibilities
-                         ["Full Stack Clojure(script) Datomic CRUD application development"
-                          "Set up CI/CD pipeline using CircleCI AWS ECR and ECS Terraform"]
-                         :projects [{:name "Formalized extensible algebra for Datomic statements"
-                                     :details
-                                     ["Algebra supported simplification of negating statments (eg. 1 + -1 = 0)"
-                                      "Frontend logic would submit new statements on change, and the state would self simplify"
-                                      "Datomic statements were proved to form an Algebraic Group"]}
-                                    {:name "Research and Development"
-                                     :details ["Reactive streams in Clojurescript"
-                                               "Category theory-based programming in Clojure"
-                                               "Pattern Matching algorithms"]}]}
+                         ["Development on Full Stack Clojure (script), Datomic CRUD application framework"
+                          "Setup CI/CD pipeline using CircleCI and AWS ECR and ECS, configured in Terraform"]
+                         :projects ["Formalized extensible algebra for Datomic statements"
+                                    ["Algebra supported simplification of negating statments (eg. 1 + -1 = 0)"
+                                     "Frontend logic would submit new statements on change, and the state would self simplify"
+                                     "Datomic statements were proved to form an Algebraic Group"]
+                                    "Research and Development"
+                                    ["Reactive streams for rendering in Clojurescript"
+                                     "Category theory-based programming in Clojure"
+                                     "Pattern Matching algorithms"]]}
                :skills ["Clojure(script)"
                         "Datomic"
                         "Reactive Streams"
@@ -66,15 +66,16 @@
                           "Created CSV file digest framework"
                           "Developed end-to-end testing framework"]
                          :projects
-                         [{:name "CSV file digest framework"
-                           :technology "Java"
-                           :details ["Streamed file data object-oriented design"]}
-                          {:name "Testing framework"
-                           :technology ["Clojure" "Java"]
-                           :details
-                           ["Built domain-specific language for test automation"
-                            "Focused on composability ease of use and cleanup"]}]}
-               :skills ["Java" "Clojure" "Docker" "PostgreSQL" "Object-Oriented Design"]}]
+                         ["Worked on backend of genomic data ETL application"
+                          "Created CSV file digest framework"
+                          ["Provided a data file, and a descriptive aspect file, the application produces a stream tuples that would be committed to a database."
+                           "Aspects would be used to generate streams of cells; these streams would be aligned based on properties of each aspect"
+                           "Written in Java; strong focus on an object-oriented design"]
+                          "Developed framework for automated end-to-end testing; focused on composability, ease of use, and self-cleanup"
+                          ["Developed domain-specific scripting language to simplify semantic layer of test suit in 3 layers: Arrange/Act, Assert, and Cleanup"
+                           "Was built in 3 separate components: A language backend (written in Clojure), a business logic middle layer (written in Java), and a testing logic script suite (written in custom syntax)"
+                           "Cleanup ensured automatic test independence and idempotency; tests were often run on deployed production environments]"]]}
+                         :skills ["Java" "Clojure" "Docker" "PostgreSQL" "Object-Oriented Design"]}]
  :skills ["Java"
           "Clojure(script)"
           "Scala"

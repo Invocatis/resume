@@ -94,6 +94,7 @@ header .info > div {
   border-radius: 0.4em;
   padding: 0.25em;
   display: inline-block;
+  margin: 0.2em;
 }
 
 .projects {

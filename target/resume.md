@@ -35,14 +35,14 @@ Location:  **Datasembly**
 
 ##### Projects
 
-- Headless browsing framework
-	- Proposed and developed a framework replacing Puppeteer
-	- Reduced complexity enabled scraping with JavaScript execution
-	- Support for multiple headless browser libraries
-- Amazon Instacart and Shipt scrapers
-	- Developed scrapers for complex data sources
-	- Created fast turnaround for new customers via Instacart integration
-	- Introduced new code paradigms for stability and legibility
+- 
+
+- 
+
+- 
+
+- 
+
 
 Skills Used: Scala | Scala Cats | Puppeteer / Playwright | SQL | Snowflake | GCP | HTTP Protocol | Airflow | Web Scraping
 
@@ -56,19 +56,19 @@ Location:  **Hyperfiddle**
 
 ##### Responsibilities
 
-- Full Stack Clojure(script) Datomic CRUD application development
-- Set up CI/CD pipeline using CircleCI AWS ECR and ECS Terraform
+- Development on Full Stack Clojure (script), Datomic CRUD application framework
+- Setup CI/CD pipeline using CircleCI and AWS ECR and ECS, configured in Terraform
 
 ##### Projects
 
-- Formalized extensible algebra for Datomic statements
-	- Algebra supported simplification of negating statments (eg. 1 + -1 = 0)
-	- Frontend logic would submit new statements on change, and the state would self simplify
-	- Datomic statements were proved to form an Algebraic Group
-- Research and Development
-	- Reactive streams in Clojurescript
-	- Category theory-based programming in Clojure
-	- Pattern Matching algorithms
+- 
+
+- 
+
+- 
+
+- 
+
 
 Skills Used: Clojure(script) | Datomic | Reactive Streams | Haxe | AWS | Terraform | Docker
 
@@ -88,11 +88,16 @@ Location:  **Cornell University**
 
 ##### Projects
 
-- CSV file digest framework
-	- Streamed file data object-oriented design
-- Testing framework
-	- Built domain-specific language for test automation
-	- Focused on composability ease of use and cleanup
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
 
 Skills Used: Java | Clojure | Docker | PostgreSQL | Object-Oriented Design
 
