@@ -1,97 +1,83 @@
 #!/usr/bin/env bb
 
 (load-file "src/util/markdown.clj")
+(load-file "src/util/simple.clj")
 
 (def resume-data (clojure.edn/read-string (slurp "resources/data.edn")))
 
-(defn nested-list->ul
-  [list]
+;; (def extra-data (clojure.edn/read-string (slurp (first *command-line-args*))))
+
+(defn capitalize
+  [string]
+  (str (clojure.string/capitalize (subs string 0 1)) (subs string 1)))
+
+(defn pretty
+  [string]
+  (let [s (if (keyword? string) (name string) (str string))]
+    (->>
+     (clojure.string/split s #"-")
+     (map capitalize)
+     (interpose \space)
+     (apply str))))
+
+(declare -render)
+
+(defn h
+  [level]
+  (keyword (str "h" level)))
+
+(defn render|map
+  [{:keys [level] :as context} data]
   (into
-   [:ul]
-   (map (fn [li] (if (vector? li) (nested-list->ul li) [:li li])) list)))
+   [:div]
+   (map
+    (fn [[k v]]
+      (let [rendered-value (-render (update context :level inc) v)]
+        (if (string? rendered-value)
+          [:span
+           [:em (pretty k) ":"]
+           rendered-value]
+          [:div
+           [(h level) (pretty k)]
+           rendered-value])))
+    data)))
 
-(defn section|personal-info
-  [{:keys [email location linkedin github]} {:keys [degree year institution]}]
+(defn render|vector
+  [context data]
+  (let [rendered-children (mapv #(-render context %) data)]
+    (cond
+      #_(every? #(and (string? %) (< (count %) 16)) rendered-children)
+      #_(into [:span] rendered-children)
+
+      (every? string? data)
+      (into [:ul] (map (fn [c] [:li c]) rendered-children))
+
+      (and (every? map? data) (< (:level context) 3))
+      (into [:div] (interpose [:hr] (map (fn [c] [:li c]) rendered-children)))
+
+      :else
+      (into [:div] rendered-children))))
+
+(defn render|string
+  [context data]
+  (str data))
+
+(defn -render
+  [context data]
+  (cond
+    (map? data)
+    (render|map context data)
+
+    (vector? data)
+    (render|vector context data)
+
+    :else
+    (render|string context data)))
+
+(defn render
+  [data]
   [:div
-   [:span "Email: " email]
-   [:span "Location: " location]
-   [:span "LinkedIn: " linkedin]
-   [:span "Github: " github]
-   [:span "Education: " degree " | " institution " [" year "]"]])
+   [:span [:i "Pretty Version:"] [:a {:href "https://invocatis.github.io/resume/target/resume.html"}]]
+   (-render {:level 1} data)])
 
-(defn experience|info
-  [roles duration company location]
-  [:div
-   (into
-    [:div]
-    (for [{:keys [title duration]} roles]
-      [:h3 title duration]))
-   [:span duration]
-   [:span "Company: " [:strong company]]
-   [:span "Location: " [:strong location]]])
-
-(defn experience|responsibilities
-  [responsibilities]
-  [:div
-   [:h5 "Responsibilities"]
-   (nested-list->ul responsibilities)])
-
-(defn experience|projects
-  [projects]
-  [:div
-   [:h5 "Projects"]
-   (nested-list->ul projects)])
-
-(defn experience|skills
-  [skills]
-  (into
-   [:span "Skills Used:"]
-   (interpose \| skills)))
-
-(defn element|experience
-  [{:keys [roles duration location company details skills]}]
-  [:div
-   (experience|info roles duration location company)
-   (experience|responsibilities (:responsibilities details))
-   (experience|projects (:projects details))
-   (experience|skills skills)])
-
-(defn section|experience
-  [experiences]
-  (into
-   [:article]
-   (map element|experience experiences)))
-
-(defn section|skills
-  [skills]
-  [:div
-   [:h2 "Skills"]
-   (into [:span] (interpose \| skills))])
-
-(defn section|projects
-  [projects]
-  (into
-   [:div
-    [:h2 "Projects"]]
-   (for [{:keys [name description link]} projects]
-     [:div
-      [:h4 name]
-      [:i description]
-      [:a {:href link}]])))
-
-(defn generate-resume
-  [{:keys [name contact education experience skills projects]}]
-  (util.markdown/hiccup->markdown
-   [:body
-    [:header
-     [:h1 name]
-     [:hr]
-     (section|personal-info contact education)]
-    [:hr]
-    (section|experience experience)
-    (section|skills skills)
-    (section|projects projects)]))
-
-
-
-(println (generate-resume resume-data))
+(println (util.markdown/hiccup->markdown (render (util.simple/simplify resume-data))))

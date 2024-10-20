@@ -49,7 +49,7 @@
 
 (defmethod hiccup->markdown :span
   [[_ & content]]
-  (->> content (map hiccup->markdown) (interpose \space) (apply str)))
+  (->> content (map hiccup->markdown) (interpose " ") (apply str)))
 
 (defmethod hiccup->markdown :article
   [[_ & content]]
@@ -58,10 +58,6 @@
 (defmethod hiccup->markdown :hr
   [_]
   "---")
-
-(defn inverse-args
-  [f]
-  (fn [& args] (apply f (reverse args))))
 
 (defmethod hiccup->markdown :ul
   [[_ & content]]
@@ -77,7 +73,7 @@
 
 (defmethod hiccup->markdown :li
   [[_ & content]]
-  (->> content (interpose \space) (apply str "- ")))
+  (->> content (map hiccup->markdown) (interpose \space) (apply str "- ")))
 
 (defmethod hiccup->markdown :br
   [_]
@@ -90,6 +86,10 @@
 (defmethod hiccup->markdown :i
   [[_ & text]]
   (str (apply str "*" text) "*"))
+
+(defmethod hiccup->markdown :em
+  [[_ & text]]
+  (str (apply str "**" text) "**"))
 
 (defmethod hiccup->markdown :a
   [[_ {:keys [href]} text]]

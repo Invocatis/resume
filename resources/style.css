@@ -110,6 +110,10 @@ header .info > div {
   padding: 10px;
 }
 
+.ai-note {
+  display: none;
+}
+
 @page {
   size: 8.5in 11in;
   margin-top: 4em;
