@@ -10,6 +10,8 @@ function build() {
   (echo "$MARKDOWN" > target/resume.txt) || echo "Docx Error"
 
   echo "$MARKDOWN" | pandoc -o target/resume.docx
+
+  echo "$HTML" | pandoc -o target/resume.pdf
 }
 
 case $1 in
