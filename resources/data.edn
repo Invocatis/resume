@@ -11,7 +11,8 @@
              :year 2017}
  :experience [{:roles [{:title "Senior Software Engineer" :duration "2022-2024"}
                        {:title "Software Engineer" :duration "2020-2022"}]
-               :duration "December 2020 - July 2024"
+               :start-date "December 2020"
+               :end-date "July 2024"
                :company "Datasembly"
                :location "Remote"
                :responsibilities ["Build & maintain web scrapers for grocery domain data"
@@ -39,7 +40,8 @@
                         "Airflow"
                         "Web Scraping"]}
               {:roles [{:title "Software Engineer Contractor"}]
-               :duration "March 2020 - September 2020"
+               :start-date "March 2020"
+               :end-date "September 2020"
                :company "Hyperfiddle"
                :location "Remote"
                :responsibilities
@@ -61,7 +63,8 @@
                         "Terraform"
                         "Docker"]}
               {:roles [{:title "Application Programmer II"}]
-               :duration "June 2019 - June 2020"
+               :start-date "June 2019"
+               :end-date "June 2020"
                :company "Cornell University"
                :location "Ithaca New York"
                :responsibilities

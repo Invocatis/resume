@@ -11,7 +11,7 @@ function build() {
 
   echo "$MARKDOWN" | pandoc -o target/resume.docx
 
-  echo "$HTML" | pandoc -o target/resume.pdf
+  echo "$MARKDOWN" | pandoc -o target/resume.pdf -t html
 }
 
 case $1 in

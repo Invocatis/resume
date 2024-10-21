@@ -19,13 +19,13 @@
    [:div [:i.fa.fa-university] institution]])
 
 (defn experience|info
-  [roles duration company location]
+  [roles start-date end-date company location]
   [:div.info
    (into
     [:span]
     (for [{:keys [title duration]} roles]
       [:div [:strong title (when duration (str " (" duration ")"))]]))
-   [:span.date [:i.fa.fa-calendar] duration]
+   [:span.date [:i.fa.fa-calendar] (str start-date " - " (or end-date "Present"))]
    [:h4 company]
    [:span.location [:i.fa.fa-map-marker] [:strong location]]])
 
@@ -49,9 +49,9 @@
    (map (fn [skill] [:div.bubble skill]) skills)))
 
 (defn element|experience
-  [{:keys [roles duration location company responsibilities projects skills]}]
+  [{:keys [roles start-date end-date location company responsibilities projects skills]}]
   [:div.experience
-   (experience|info roles duration company location)
+   (experience|info roles start-date end-date company location)
    (experience|responsibilities responsibilities)
    (experience|projects projects)
    (experience|skills skills)])

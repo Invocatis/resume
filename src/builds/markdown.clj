@@ -55,6 +55,9 @@
       (and (every? map? data) (< (:level context) 3))
       (into [:div] (interpose [:hr] (map (fn [c] [:li c]) rendered-children)))
 
+      (every? map? data)
+      (into [:div] (interpose [:hr] (map (fn [c] [:li c]) rendered-children)))
+
       :else
       (into [:div] rendered-children))))
 

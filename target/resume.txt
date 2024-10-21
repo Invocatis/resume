@@ -28,15 +28,19 @@
 
 ### Roles
 
-**Title:** Senior Software Engineer
+- **Title:** Senior Software Engineer
 
 **Duration:** 2022-2024
 
-**Title:** Software Engineer
+---
+
+- **Title:** Software Engineer
 
 **Duration:** 2020-2022
 
-**Duration:** December 2020 - July 2024
+**Start Date:** December 2020
+
+**End Date:** July 2024
 
 **Location:** Remote
 
@@ -80,9 +84,11 @@ Primary Developer who created & maintained scrapers for Amazon, Instacart, and S
 
 ### Roles
 
-**Title:** Software Engineer Contractor
+- **Title:** Software Engineer Contractor
 
-**Duration:** March 2020 - September 2020
+**Start Date:** March 2020
+
+**End Date:** September 2020
 
 **Location:** Remote
 
@@ -119,9 +125,11 @@ Research and Development
 
 ### Roles
 
-**Title:** Application Programmer II
+- **Title:** Application Programmer II
 
-**Duration:** June 2019 - June 2020
+**Start Date:** June 2019
+
+**End Date:** June 2020
 
 **Location:** Ithaca New York
 
