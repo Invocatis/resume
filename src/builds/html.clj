@@ -52,8 +52,9 @@
   [{:keys [roles start-date end-date location company responsibilities projects skills]}]
   [:div.experience
    (experience|info roles start-date end-date company location)
-   (experience|responsibilities responsibilities)
-   (experience|projects projects)
+   [:div.details
+    (experience|responsibilities responsibilities)
+    (experience|projects projects)]
    (experience|skills skills)])
 
 (defn section|experience
@@ -93,9 +94,7 @@
       [:body
        [:header
         [:h1 fullname]
-        [:hr.minor]
         (section|personal-info personal-information contact education)]
-       [:hr.major]
        (section|experience experience)
        (section|projects projects)]])))
 

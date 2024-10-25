@@ -22,6 +22,8 @@ ul {
 
 h1 {
   font-size: 2em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 h2 {
@@ -62,27 +64,32 @@ header .info > div {
   min-width: fit-content;
 }
 
+header .info {
+  margin-bottom: 2em;
+}
+
 .experience {
-  width: 100%
+  width: 100%;
+  margin-bottom: 2em;
 }
 
 .experience .info {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 1em;
 }
 
 .experience .info > * {
   flex: 1 1 50%;
   background-color: #f0f0f0;
-  padding: 5px;
+  padding: 20px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   min-width: fit-content;
 }
 
 .experience .details {
-  margin-top: 1em;
-  padding-left: 1em;
+  padding-left: 2em;
 }
 
 .skills {

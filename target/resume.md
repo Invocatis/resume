@@ -135,21 +135,24 @@ Research and Development
 
 ### Responsibilities
 
-- Improved backend of genomic data ETL application
-- Created CSV file digest framework
-- Developed end-to-end testing framework
+Improved genomic CSV digester application
+
+- Simplified instruction file format, reducing redundancy and improving readability (V2)
+- Rewrote digester to be generic; now uses Aspect Files that describe the CSV to be loaded (V3)
+
+Wrote file translator to convert instructions files between V1, V2, and V3; written in Clojure(script) both as command line utility, and web app
 
 ### Projects
 
 Worked on backend of genomic data ETL application
 
-Created CSV file digest framework
+Created CSV file digest framework (See Digester Project Below)
 
 - Provided a data file, and a descriptive aspect file, the application produces a stream tuples that would be committed to a database.
 - Aspects would be used to generate streams of cells; these streams would be aligned based on properties of each aspect
 - Written in Java; strong focus on an object-oriented design
 
-Developed framework for automated end-to-end testing; focused on composability, ease of use, and self-cleanup
+Developed framework for automated end-to-end testing; focused on composability, ease of use, and self-cleanup (See Ernie Project Below)
 
 - Developed domain-specific scripting language to simplify semantic layer of test suit in 3 layers: Arrange/Act, Assert, and Cleanup
 - Was built in 3 separate components: A language backend (written in Clojure), a business logic middle layer (written in Java), and a testing logic script suite (written in custom syntax)
@@ -206,3 +209,11 @@ Developed framework for automated end-to-end testing; focused on composability, 
 **Description:** Exploration of algebraic concepts defined in Scala 3
 
 **Link:** https://github.com/Invocatis/scala3-algebraic-type-exploration
+
+---
+
+- **Name:** CSV Digester
+
+**Description:** CSV ingestion and manipulation library
+
+**Link:** https://bitbucket.org/gobiiproject/gobii.masticator/src/develop/
