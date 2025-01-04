@@ -11,12 +11,12 @@
 (defn section|personal-info
   [{:keys [country city]} {:keys [email linkedin github]} {:keys [field-of-study degree year institution]}]
   [:div.info
-   [:div [:i.fa.fa-at] email]
-   [:div [:i.fa.fa-map-marker] (str city " | " country)]
-   [:div [:i.fa.fa-brands.fa-linkedin-in] [:a {:href linkedin} linkedin]]
-   [:div [:i.fa.fa-brands.fa-github] [:a {:href github} github]]
-   [:div [:i.fa.fa-graduation-cap] degree "[" field-of-study "]" " - " year]
-   [:div [:i.fa.fa-university] institution]])
+   [:div#email {:onClick "textToClipboard(event)"} [:i.fa.fa-at] email]
+   [:div#country [:i.fa.fa-map-marker] (str city " | " country)]
+   [:div#linkedin [:i.fa.fa-brands.fa-linkedin-in] [:a {:href linkedin} linkedin]]
+   [:div#github [:i.fa.fa-brands.fa-github] [:a {:href github} github]]
+   [:div#degree [:i.fa.fa-graduation-cap] degree "[" field-of-study "]" " - " year]
+   [:div#university [:i.fa.fa-university] institution]])
 
 (defn experience|info
   [roles start-date end-date company location]
@@ -91,6 +91,10 @@
                :integrity "sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
                :crossorigin "anonymous"
                :referrerpolicy "no-referrer"}]]
+      [:script
+       "function textToClipboard(ev) {
+          navigator.clipboard.writeText(ev.target.textContent)
+        }"]
       [:body
        [:header
         [:h1 fullname]
