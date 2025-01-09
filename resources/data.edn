@@ -82,7 +82,16 @@
                 ["Developed domain-specific scripting language to simplify semantic layer of test suit in 3 layers: Arrange/Act, Assert, and Cleanup"
                  "Was built in 3 separate components: A language backend (written in Clojure), a business logic middle layer (written in Java), and a testing logic script suite (written in custom syntax)"
                  "Cleanup ensured automatic test independence and idempotency; tests were often run on deployed production environments]"]]
-               :skills ["Java" "Clojure" "Docker" "PostgreSQL" "Object-Oriented Design"]}]
+               :skills ["Java" "Clojure" "Docker" "PostgreSQL" "Object-Oriented Design"]}
+            {:roles [{:title "Software Engineer Co-Op"}]
+             :start-date "Jan 2018"
+             :end-date "July 2018"
+             :company "Intuit"
+             :location "Mountain View, CA"
+             :responsibilities
+             ["Worked on agile team, deploying microservice for account creation"
+              "Implemented document upload endpoint for identification documentation required for some account creations"
+              "Expanded coverage of unit testing accross code base"]}]
  :skills ["Java"
           "Clojure(script)"
           "Scala"

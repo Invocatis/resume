@@ -166,6 +166,24 @@ Developed framework for automated end-to-end testing; focused on composability, 
 - PostgreSQL
 - Object-Oriented Design
 
+## Intuit
+
+### Roles
+
+- **Title:** Software Engineer Co-Op
+
+**Start Date:** Jan 2018
+
+**End Date:** July 2018
+
+**Location:** Mountain View, CA
+
+### Responsibilities
+
+- Worked on agile team, deploying microservice for account creation
+- Implemented document upload endpoint for identification documentation required for some account creations
+- Expanded coverage of unit testing accross code base
+
 # Skills
 
 - Java

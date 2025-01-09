@@ -37,9 +37,10 @@
 
 (defn experience|projects
   [projects]
-  [:span
-   [:h5 "Projects"]
-   (nested-list->ul projects)])
+  (when projects
+    [:span
+    [:h5 "Projects"]
+    (nested-list->ul projects)]))
 
 
 (defn experience|skills
