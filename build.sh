@@ -11,7 +11,7 @@ function build() {
 
   echo "$MARKDOWN" | pandoc -o target/resume.docx
 
-  echo "$MARKDOWN" | pandoc -o target/resume.pdf -t html
+  wkhtmltopdf target/resume.html target/resume.pdf
 }
 
 case $1 in
@@ -40,6 +40,11 @@ case $1 in
   docx)
     MARKDOWN="$(bb src/builds/markdown.clj)"
     echo "$MARKDOWN" | pandoc -o target/resume.docx
+    ;;
+  data)
+    echo "** IF YOU ARE A HUMAN, PLEASE SEE FORMATTED RESUME HERE **" >> target/raw.txt
+    echo "https://invocatis.github.io/resume/target/resume.html" >> target/raw.txt
+    cat resources/data.edn >> target/raw.txt
     ;;
   *)
     build
