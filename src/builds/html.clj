@@ -8,9 +8,17 @@
    [:ul]
    (map (fn [li] (if (vector? li) (nested-list->ul li) [:li li])) list)))
 
+(defn keyword->humanized
+  [keyword]
+  (->>
+   (-> keyword name (clojure.string/split #"-"))
+   (map clojure.string/capitalize)
+   (interpose \space)
+   (apply str)))
+
 (defn section|personal-info
   [{:keys [country city]} {:keys [email linkedin github]} {:keys [field-of-study degree year institution]}]
-  [:div.info
+  [:div.section.info
    [:div#email {:onClick "textToClipboard(event)"} [:i.fa.fa-at] email]
    [:div#country [:i.fa.fa-map-marker] (str city " | " country)]
    [:div#linkedin [:i.fa.fa-brands.fa-linkedin-in] [:a {:href linkedin} linkedin]]
@@ -39,34 +47,37 @@
   [projects]
   (when projects
     [:span
-    [:h5 "Projects"]
-    (nested-list->ul projects)]))
+     [:h5 "Projects"]
+     (nested-list->ul projects)]))
 
-
-(defn experience|skills
-  [skills]
-  (into
-   [:div.skills]
-   (map (fn [skill] [:div.bubble skill]) skills)))
+(defn section|skills
+  [skill-groups]
+  [:div.section.skills
+   [:h2 "Skills"]
+   (into
+    [:div.skill-groups]
+    (for [[group-name group] skill-groups]
+      [:div.skill-group
+       [:h4 (keyword->humanized group-name)]
+       [:div.skill-members (map (fn [skill] [:div.bubble skill]) group)]]))])
 
 (defn element|experience
-  [{:keys [roles start-date end-date location company responsibilities projects skills]}]
+  [{:keys [roles start-date end-date location company responsibilities projects]}]
   [:div.experience
    (experience|info roles start-date end-date company location)
    [:div.details
     (experience|responsibilities responsibilities)
-    (experience|projects projects)]
-   (experience|skills skills)])
+    (experience|projects projects)]])
 
 (defn section|experience
   [experiences]
   (into
-   [:article.experiences]
+   [:div.section.experiences]
    (map element|experience experiences)))
 
 (defn section|projects
   [projects]
-  [:div
+  [:div.section.projects
    [:h2 "Projects"]
    [:div.projects
     (for [project projects]
@@ -101,6 +112,7 @@
         [:h1 fullname]
         (section|personal-info personal-information contact education)]
        (section|experience experience)
+       (section|skills skills)
        (section|projects projects)]])))
 
 (println (generate-resume resume-data))

@@ -30,13 +30,13 @@
 
 - **Title:** Senior Software Engineer
 
-**Duration:** 2022-2024
+**Duration:** 2022–2024
 
 ---
 
 - **Title:** Software Engineer
 
-**Duration:** 2020-2022
+**Duration:** 2020–2022
 
 **Start Date:** December 2020
 
@@ -46,45 +46,21 @@
 
 ### Responsibilities
 
-- Build & maintain web scrapers for grocery domain data
-- Implement architectural advancements to web scraping framework
-- Reverse engineer site APIs; adapt to scraping framework
-- React to bot detection; develop and apply obfuscation techniques
-- Work with Product and Customer teams to convert data to actionable insights
-- Lead domain-specific dictionary initiative
+- Develop and maintain automated data collection systems for grocery-related datasets
+- Reverse engineer proprietary web APIs and integrate them into a unified data pipeline
+- Design and implement evasion techniques to ensure high data acquisition success rates
+- Collaborate with Product and Customer teams to transform raw data into actionable insights
 
 ### Projects
 
-Developed headless browsing framework in Scala using Playwright
-
-- Proposed, by me, to replace the existing framework written in Puppeteer / Javascript
-- Playwright on the JVM greatly reduced development and deployment fcomplexity; no longer needed to maintain a cluster of headless workers, or a remote execution DSL
-- Enabled scraping of websites that required Javascript execution, had sufficiently complex login APIs, or employed encryption of API request information
-- Framework was developed to easily allow different headless browser libraries to be used
-
-Primary Developer who created & maintained scrapers for Amazon, Instacart, and Shipt
-
-- Some of the most complex data sources we collected from
-- Instacart was an easy avenue for collecting new banners, creating fast turn around for new customers
-- Instituted new code paradigms that others could leverage to make scrapers more legible, and stable
-
-### Skills
-
-- Scala
-- Scala Cats
-- Puppeteer / Playwright
-- SQL
-- Snowflake
-- GCP
-- HTTP Protocol
-- Airflow
-- Web Scraping
+- Led development of a Playwright-based browser automation framework, simplifying integration logic and supporting advanced features such as JavaScript rendering, API encryption handling, and dynamic login workflows
+- Initiated effort to define and standardize the 'Out-of-Stock' detection logic, collaborating with cross-functional teams to align on data parsing patterns. Improved understanding, and clarity into data meaning.
 
 ## Hyperfiddle
 
 ### Roles
 
-- **Title:** Software Engineer Contractor
+- **Title:** Software Engineer
 
 **Start Date:** March 2020
 
@@ -94,32 +70,17 @@ Primary Developer who created & maintained scrapers for Amazon, Instacart, and S
 
 ### Responsibilities
 
-- Development on Full Stack Clojure (script), Datomic CRUD application framework
-- Setup CI/CD pipeline using CircleCI and AWS ECR and ECS, configured in Terraform
+- Built full-stack features in a Clojure/ClojureScript + Datomic application framework
+- Implemented CI/CD pipeline using CircleCI, AWS ECR/ECS, and Terraform
+- Built configurable sample data generation library to support product demos and internal testing workflows
 
 ### Projects
 
-Formalized extensible algebra for Datomic statements
+Designed an extensible algebra system for Datomic statements
 
-- Algebra supported simplification of negating statments (eg. 1 + -1 = 0)
-- Frontend logic would submit new statements on change, and the state would self simplify
-- Datomic statements were proved to form an Algebraic Group
-
-Research and Development
-
-- Reactive streams for rendering in Clojurescript
-- Category theory-based programming in Clojure
-- Pattern Matching algorithms
-
-### Skills
-
-- Clojure(script)
-- Datomic
-- Reactive Streams
-- Haxe
-- AWS
-- Terraform
-- Docker
+- Enabled automatic simplification of negating statements (e.g., 1 + -1 = 0)
+- Developed frontend logic to emit statements that self-simplify on change
+- Proved Datomic statements formed an Algebraic Group structure
 
 ## Cornell University
 
@@ -137,34 +98,17 @@ Research and Development
 
 Improved genomic CSV digester application
 
-- Simplified instruction file format, reducing redundancy and improving readability (V2)
-- Rewrote digester to be generic; now uses Aspect Files that describe the CSV to be loaded (V3)
-
-Wrote file translator to convert instructions files between V1, V2, and V3; written in Clojure(script) both as command line utility, and web app
+- Simplified instruction fiel format, reducing redundancy (V2)
+- Rewrote digester to be more generic and powerful, developed declaritive Aspect Files (v32)
+- Created a file translator to convert instruction files between V1, V2, and V3 in Clojure(script)
 
 ### Projects
 
-Worked on backend of genomic data ETL application
+Developed framework for automated end-to-end testing
 
-Created CSV file digest framework (See Digester Project Below)
-
-- Provided a data file, and a descriptive aspect file, the application produces a stream tuples that would be committed to a database.
-- Aspects would be used to generate streams of cells; these streams would be aligned based on properties of each aspect
-- Written in Java; strong focus on an object-oriented design
-
-Developed framework for automated end-to-end testing; focused on composability, ease of use, and self-cleanup (See Ernie Project Below)
-
-- Developed domain-specific scripting language to simplify semantic layer of test suit in 3 layers: Arrange/Act, Assert, and Cleanup
-- Was built in 3 separate components: A language backend (written in Clojure), a business logic middle layer (written in Java), and a testing logic script suite (written in custom syntax)
-- Cleanup ensured automatic test independence and idempotency; tests were often run on deployed production environments]
-
-### Skills
-
-- Java
-- Clojure
-- Docker
-- PostgreSQL
-- Object-Oriented Design
+- Created a domain-specific scripting langauge for test structure: Arrange/Act, Assert, Cleanup
+- Clojure for backend, Java for business logic, and custom syntax for test specifics
+- Ensured test independnence and idempotency in production environments
 
 ## Intuit
 
@@ -180,21 +124,54 @@ Developed framework for automated end-to-end testing; focused on composability, 
 
 ### Responsibilities
 
-- Worked on agile team, deploying microservice for account creation
-- Implemented document upload endpoint for identification documentation required for some account creations
-- Expanded coverage of unit testing accross code base
+- Contributed to an agile team developing microservices for account creation workflows
+- Implemented a document upload endpoint for identity verification during onboarding
+- Increased test reliability and confidence by expanding unit test coverage across critical components
 
 # Skills
 
-- Java
-- Clojure(script)
+## Programming Languages
+
 - Scala
-- Docker
-- Google Cloud
-- Aiflow
+- Clojure(script)
+- Java
+- SQL
+- Rust
+- Python
+- Javascript
+
+## Infrastructure
+
+- PostgreSQL
 - Snowflake
 - Airflow
-- SQL
+- MySQL
+- Kafka
+- Linux
+
+## Devops
+
+- Docker
+- Terraform
+- GCP
+- AWS
+- CircleCI
+- Bamboo
+
+## Monitoring
+
+- Grafana
+- Prometheus
+- BugSplat
+- Slack Integration
+
+## Theory
+
+- Functional Programming
+- Object Oriented Programming
+- Type Theory
+- Language & Framework Design
+- Typed Functional Programming
 
 # Projects
 
