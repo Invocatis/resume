@@ -119,11 +119,7 @@ header .info > div {
 }
 
 .skill-group .bubble {
-    border: thin solid grey;
-    border-radius: 0.4em;
-    padding: 0.4em;
-    display: inline-block;
-    margin: 0.2em;
+    padding-left: 0.5em;
 }
 
 .projects {
@@ -151,7 +147,7 @@ header .info > div {
     }
 
     header .info > div {
-        padding: 5px;
+        padding: 20px 5px 20px 5px;
         width: 33%;
     }
 }

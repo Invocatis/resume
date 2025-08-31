@@ -46,8 +46,9 @@
 
 ### Responsibilities
 
-- Develop and maintain automated data collection systems for grocery-related datasets
-- Reverse engineer proprietary web APIs and integrate them into a unified data pipeline
+- Develop and maintain automated data collection systems, written in Scala, for grocery-related datasets
+- Maintain Airflow DAGs written in Python
+- Reverse engineer web APIs and integrate them into a unified data pipeline
 - Design and implement evasion techniques to ensure high data acquisition success rates
 - Collaborate with Product and Customer teams to transform raw data into actionable insights
 

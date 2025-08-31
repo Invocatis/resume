@@ -59,7 +59,12 @@
     (for [[group-name group] skill-groups]
       [:div.skill-group
        [:h4 (keyword->humanized group-name)]
-       [:div.skill-members (map (fn [skill] [:div.bubble skill]) group)]]))])
+       (->> group
+            (interpose ",")
+            (partition 2 2 nil)
+            (map (fn [pair] (apply str pair)))
+            (map (fn [skill] [:div.bubble skill]))
+            (into [:div.skill-members]))]))])
 
 (defn element|experience
   [{:keys [roles start-date end-date location company responsibilities projects]}]
@@ -72,7 +77,6 @@
 (defn section|experience
   [experiences]
   (into
-   [:div.section.experiences]
    (map element|experience experiences)))
 
 (defn section|projects
