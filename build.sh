@@ -1,52 +1,79 @@
 
+function build_markdown() {
+    echo "Building Markdown"
+    MARKDOWN="$(bb src/builds/markdown.clj)"
+    (echo "$MARKDOWN" > target/resume.md) || echo "Markdown Error"
+}
+
+function build_docx() {
+    echo "Building Docx"
+    MARKDOWN="$(bb src/builds/markdown.clj)"
+    (echo "$MARKDOWN" > target/resume.txt) || echo "Docx Error"
+}
+
+function build_txt() {
+    echo "Building TXT"
+    MARKDOWN="$(bb src/builds/markdown.clj)"
+    (echo "$MARKDOWN" > target/resume.txt) || echo "Docx Error"
+}
+
+function build_html() {
+    echo "Building HTML"
+    HTML="$(bb src/builds/html.clj)"
+    (echo "$HTML" > target/resume.html)  || echo "HTML Error"
+}
+
+function build_pdf() {
+    echo "Building PDF"
+    build_html
+    wkhtmltopdf target/resume.html target/resume.pdf
+}
+
+function build_all() {
+    build_markdown
+    build_txt
+    build_docx
+    build_pdf
+}
+
 function build() {
 
+    case $1 in
+      markdown)
+        build_markdown
+        ;;
+      txt)
+        build_txt
+        ;;
+      html)
+        build_html
+        ;;
+      pdf)
+        build_pdf
+        ;;
+      docx)
+        build_docx
+        ;;
+      *)
+        build_all
+        ;;
+    esac
 
-  HTML="$(bb src/builds/html.clj)"
-  MARKDOWN="$(bb src/builds/markdown.clj)"
-
-  (echo "$HTML" > target/resume.html)  || echo "HTML Error"
-  (echo "$MARKDOWN" > target/resume.md) || echo "Markdown Error"
-  (echo "$MARKDOWN" > target/resume.txt) || echo "Docx Error"
-
-  echo "$MARKDOWN" | pandoc -o target/resume.docx
-
-  wkhtmltopdf target/resume.html target/resume.pdf
-}
+ }
 
 case $1 in
 
   watch)
     echo "Building once, then watching ..."
-    build
+    build $2
     fswatch $(find . -name "*.clj") $(find resources) | while read file; do
       echo "Change detected, rebuilding..."
       build
     done
     ;;
 
-  markdown)
-    MARKDOWN="$(bb src/builds/markdown.clj)"
-    (echo "$MARKDOWN" > target/resume.md) || echo "Markdown Error"
-    ;;
-  txt)
-    MARKDOWN="$(bb src/builds/markdown.clj)"
-    (echo "$MARKDOWN" > target/resume.txt) || echo "Txt Error"
-    ;;
-  html)
-    HTML="$(bb src/builds/html.clj)"
-    (echo "$HTML" > target/resume.html)  || echo "HTML Error"
-    ;;
-  docx)
-    MARKDOWN="$(bb src/builds/markdown.clj)"
-    echo "$MARKDOWN" | pandoc -o target/resume.docx
-    ;;
-  data)
-    echo "** IF YOU ARE A HUMAN, PLEASE SEE FORMATTED RESUME HERE **" >> target/raw.txt
-    echo "https://invocatis.github.io/resume/target/resume.html" >> target/raw.txt
-    cat resources/data.edn >> target/raw.txt
-    ;;
   *)
-    build
+    build $1
     ;;
+
 esac

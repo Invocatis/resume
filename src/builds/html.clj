@@ -17,25 +17,42 @@
    (apply str)))
 
 (defn section|personal-info
-  [{:keys [country city]} {:keys [email linkedin github]} {:keys [field-of-study degree year institution]}]
+  [{:keys [country city]} {:keys [email linkedin github]}]
   [:div.section.info
+   [:h2.contact [:i.fa.fa-address-book] "Contact"]
+   [:hr.minor]
    [:div#email {:onClick "textToClipboard(event)"} [:i.fa.fa-at] email]
-   [:div#country [:i.fa.fa-map-marker] (str city " | " country)]
+   [:div#location [:i.fa.fa-map-marker] (str city #_" | " #_country)]
    [:div#linkedin [:i.fa.fa-brands.fa-linkedin-in] [:a {:href linkedin} linkedin]]
-   [:div#github [:i.fa.fa-brands.fa-github] [:a {:href github} github]]
-   [:div#degree [:i.fa.fa-graduation-cap] degree "[" field-of-study "]" " - " year]
-   [:div#university [:i.fa.fa-university] institution]])
+   [:div#github [:i.fa.fa-brands.fa-github] [:a {:href github} github]]])
+
+(defn section|synopsis
+  [points]
+  #_(->> points
+       (map (fn [x] [:span x]))
+       (into
+        [:div.section.synopsis])))
+
+(defn section|education
+  [{:keys [field-of-study degree year institution]}]
+  [:div.section.education
+    [:h2 "Education"]
+    [:div#degree [:i.fa.fa-graduation-cap] degree " -- " field-of-study]
+    [:div#university [:i.fa.fa-university] institution]
+    [:div#date [:i.fa.fa-calendar] year]])
 
 (defn experience|info
-  [roles start-date end-date company location]
+  [roles start-date end-date company icon-url location]
   [:div.info
+   [:div.company-composite
+    [:img {:src icon-url}]
+    [:h3.company company]]
+   [:span.location [:i.fa.fa-map-marker] [:strong location]]
    (into
     [:span]
     (for [{:keys [title duration]} roles]
       [:div [:strong title (when duration (str " (" duration ")"))]]))
-   [:span.date [:i.fa.fa-calendar] (str start-date " - " (or end-date "Present"))]
-   [:h4 company]
-   [:span.location [:i.fa.fa-map-marker] [:strong location]]])
+   [:span.date [:i.fa.fa-calendar] (str start-date " - " (or end-date "Present"))]])
 
 (defn experience|responsibilities
   [responsibilities]
@@ -67,17 +84,19 @@
             (into [:div.skill-members]))]))])
 
 (defn element|experience
-  [{:keys [roles start-date end-date location company responsibilities projects]}]
+  [{:keys [roles start-date end-date location company icon-url responsibilities projects]}]
   [:div.experience
-   (experience|info roles start-date end-date company location)
+   (experience|info roles start-date end-date company icon-url location)
    [:div.details
     (experience|responsibilities responsibilities)
     (experience|projects projects)]])
 
 (defn section|experience
   [experiences]
-  (into
-   (map element|experience experiences)))
+  (->> experiences
+       (map element|experience)
+       (interpose [:hr.minor])
+       (into [:div.experiences])))
 
 (defn section|projects
   [projects]
@@ -93,7 +112,7 @@
 
 (defn generate-resume
   [{:keys [personal-information education experience skills projects]}]
-  (let [{:keys [name surname contact]} personal-information
+  (let [{:keys [name surname tagline contact synopsis]} personal-information
         fullname (str name " " surname)]
     (hiccup.core/html
      [:html
@@ -112,11 +131,17 @@
           navigator.clipboard.writeText(ev.target.textContent)
         }"]
       [:body
-       [:header
-        [:h1 fullname]
-        (section|personal-info personal-information contact education)]
-       (section|experience experience)
-       (section|skills skills)
-       (section|projects projects)]])))
+       [:div.personal-info
+        (section|personal-info personal-information contact)
+        (section|synopsis synopsis)
+        (section|education education)
+        (section|skills skills)]
+       [:div.career-info
+        [:div.title
+         [:h1.name fullname]
+         [:h2.tagline tagline]]
+        (conj
+          (section|experience experience)
+          (section|projects projects))]]])))
 
 (println (generate-resume resume-data))

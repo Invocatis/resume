@@ -1,13 +1,18 @@
 * {
     /* border: thin solid grey; */
-    font-size: 11pt;
+    font-size: 12pt;
     margin: 0em;
 }
 
 body {
+    display: flex;
     font-family: "Courier New", Courier, monospace;
     position: absolute;
     padding: 1em;
+}
+
+body > * {
+    margin: 1em;
 }
 
 em {
@@ -21,8 +26,6 @@ ul {
 
 h1 {
     font-size: 2em;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
 }
 
 h2 {
@@ -41,7 +44,8 @@ hr.major {
 }
 
 hr.minor {
-    margin: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 .fa {
@@ -53,27 +57,48 @@ hr.minor {
     background-color: #ccc;
 }
 
-header .info {
-    display: flex;
-    flex-wrap: wrap;
+h1.name {
+    margin-bottom: 0.5em;
 }
 
-header .info > div {
-    flex: 1 1 0px;
+.title {
+    padding-bottom: 1em;
+}
+
+.title .tagline {
     background-color: #f0f0f0;
-    padding: 20px;
-    box-sizing: border-box;
+    padding: 1em;
     border: 1px solid #ccc;
-    min-width: fit-content;
+}
+
+.personal-info {
+    flex: 1;
+    width: fit-content;
+}
+
+.section.info > .contact {
+}
+
+.career-info {
+    flex: 3;
 }
 
 .section {
     margin-bottom: 3em;
 }
 
+.section.info > div {
+    white-space: nowrap;
+}
+
+.synopsis {
+}
+
+.experience > * {
+    margin-bottom: 1em;
+}
+
 .experience {
-    width: 100%;
-    margin-bottom: 2em;
 }
 
 .experience .info {
@@ -95,22 +120,40 @@ header .info > div {
     padding-left: 2em;
 }
 
-.skill-groups {
+.experience .company-composite {
+    border: none;
+    background: none;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 0px;
+}
+
+.experience .location {
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+}
+
+.experience .company-composite > * {
+    display: inline-block;
+}
+
+.experiences .company-composite > img {
+    height: 3em;
+    width: 3em;
+    margin-right: 1em;
+}
+
+.experiences .company-composite > h2 {
+}
+
+.experience .company {
+    font-size: 1.3em;
 }
 
 .skill-group {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    flex: 1;
-    box-sizing: border-box;
-    padding: 10px;
-    min-width: 30%;
-}
-
-.skill-group:last-child {
-    flex: 2.5;
+    padding: 0.5em;
 }
 
 .skill-members {
@@ -146,9 +189,8 @@ header .info > div {
         text-decoration: none;
     }
 
-    header .info > div {
-        padding: 20px 5px 20px 5px;
-        width: 33%;
+    .experience {
+        break-inside: avoid; /* modern browsers */
     }
 }
 

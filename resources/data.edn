@@ -1,19 +1,25 @@
 {:personal-information {:name "Luke"
                         :surname "Cook"
+                        :tagline "Senior Backend Software Engineer"
                         :country "United States of America"
                         :city "Ithaca, NY"
+                        :synopsis
+                         ["Functional Programming Enthusiast"
+                           "Strong backend engineer, with good frontend understanding"
+                           "Well versed in web scraping practices"]
                         :contact {:email "lukecook.e0280@passmail.net"
-                                  :linkedin "https://www.linkedin.com/in/invocatis"
-                                  :github "https://www.github.com/invocatis"}}
+                                  :linkedin "linkedin.com/in/invocatis"
+                                  :github "github.com/invocatis"}}
  :education {:degree "Bachelor's"
              :field-of-study "Computer Science"
              :institution "Rochester Institute of Technology"
-             :year 2017}
+             :year "December, 2015 - May, 2017"}
  :experience [{:roles [{:title "Senior Software Engineer" :duration "2022–2024"}
                        {:title "Software Engineer" :duration "2020–2022"}]
                :start-date "December 2020"
                :end-date "July 2024"
                :company "Datasembly"
+               :icon-url "https://avatars.githubusercontent.com/u/15114260?s=200&v=4"
                :location "Remote"
                :responsibilities ["Develop and maintain automated data collection systems, written in Scala, for grocery-related datasets"
                                   "Maintain Airflow DAGs written in Python"
@@ -27,6 +33,7 @@
                :start-date "March 2020"
                :end-date "September 2020"
                :company "Hyperfiddle"
+               :icon-url "https://avatars.githubusercontent.com/u/25986035?s=200&v=4"
                :location "Remote"
                :responsibilities ["Built full-stack features in a Clojure/ClojureScript + Datomic application framework"
                                   "Implemented CI/CD pipeline using CircleCI, AWS ECR/ECS, and Terraform"
@@ -39,19 +46,7 @@
                :start-date "June 2019"
                :end-date "June 2020"
                :company "Cornell University"
-               :location "Ithaca, NY"
-               :responsibilities ["Redesigned genomic CSV ingestion tool for flexibility and maintainability"
-                                  ["Simplified instruction file format (V2), reducing redundancy and improving readability"
-                                   "Rewrote core digester to use declarative Aspect Files (V3), which described the structure of file"
-                                   "Developed a web app to convert instruction files between V1, V2, and V3 formats in Clojure(script)"]]
-               :projects ["Built an automated end-to-end testing framework for genomic data pipelines"
-                          ["Designed a domain-specific language to structure tests using Arrange/Act, Assert, and Cleanup phases"
-                           "Implemented architecture with a Clojure backend, Java logic layer, and custom scripting syntax"
-                           "Ensured test independence and idempotency to support safe execution in production-like environments"]]}
-              {:roles [{:title "Application Programmer II"}]
-               :start-date "June 2019"
-               :end-date "June 2020"
-               :company "Cornell University"
+               :icon-url "https://www.cornell.edu/assets/core/images/logo-red@2x.png"
                :location "Ithaca New York"
                :responsibilities
                ["Improved genomic CSV digester application"
@@ -67,6 +62,7 @@
                :start-date "Jan 2018"
                :end-date "July 2018"
                :company "Intuit"
+               :icon-url "https://avatars.githubusercontent.com/u/2495066?s=200&v=4"
                :location "Mountain View, CA"
                :responsibilities ["Contributed to an agile team developing microservices for account creation workflows"
                                   "Implemented a document upload endpoint for identity verification during onboarding"
